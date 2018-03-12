@@ -32,5 +32,17 @@ sudo virtualenv -p /usr/bin/python3.5 py3env
 sudo source ./py3env/bin/activate
 ```
 
+## 4.Anaconda环境安装及配置
+
+### 4.1下载anaconda
+
+```
+https://www.anaconda.com/download/
+```
+
+### 4.2 安装anaconda
+
+
+
 
 
