@@ -1,18 +1,18 @@
-\# 构建机器学习基础环境
+# 构建机器学习基础环境
 
-\#\# 1.安装pip3
+## 1.安装pip3
 
-\`\`\`bash
-
+```bash
 sudo apt-get install python3-pip
+```
 
-\`\`\`
+## 2. pip安装虚拟环境
 
-\#\# 2. pip安装虚拟环境
-
-\`\`\`bash
-
+```bash
 sudo pip install virtualenv
+```
 
-\`\`\`
+
+
+
 
