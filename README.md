@@ -1,3 +1,4 @@
-# My Awesome Book
+# 涅槃重生，不破不立
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+一个个人杂事记录的记录桶，只记录想记录有意义的事情，哪怕是很小很小的微不住道的事.
+
