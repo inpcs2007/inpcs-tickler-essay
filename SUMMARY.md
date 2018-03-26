@@ -11,5 +11,5 @@
   * [构建java基础环境](my-practice-architect-roadmap/build-java-env.md)
 * [6.我的实践之容器](6.my-docker-architect.md)
   * [构建容器基础环境](my-docker-architect/build-docker-env.md)
-* [7.我的实践之容器](7.my-important-documents)
+* [7.重要文献](7.my-important-documents)
   * [谷歌的大规模分布式跟踪系统](my-important-documents/dapper-translation.md)
