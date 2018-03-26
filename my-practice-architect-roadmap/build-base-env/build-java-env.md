@@ -29,16 +29,16 @@
 ```
 
 > 修改sudoers文件权限
->
-> ```
-> [root@manage ~]# ll /etc/sudoers
-> -r--r-----. 1 root root 3729 12月  8 2015 /etc/sudoers
-> [root@manage ~]# sudo chmod 775 /etc/sudoers
-> [root@manage ~]# ll /etc/sudoers
-> -rwxrwxr-x. 1 root root 3729 12月  8 2015 /etc/sudoers
-> [root@manage ~]#
-> ```
->
+
+```
+[root@manage ~]# ll /etc/sudoers
+-r--r-----. 1 root root 3729 12月  8 2015 /etc/sudoers
+[root@manage ~]# sudo chmod 775 /etc/sudoers
+[root@manage ~]# ll /etc/sudoers
+-rwxrwxr-x. 1 root root 3729 12月  8 2015 /etc/sudoers
+[root@manage ~]#
+```
+
 > 使用快捷执行命令
 
 ```
@@ -47,16 +47,15 @@
 ```
 
 > 恢复访问权限
->
-> ```
-> [root@manage ~]# sudo chmod 400 /etc/sudoers
-> [root@manage ~]# ll /etc/sudoers
-> -r--------. 1 root root 3767 9月   7 10:03 /etc/sudoers
-> [root@manage ~]#
-> ```
 
-# 删除Centos6.8 的原生OpenJdk
+```
+[root@manage ~]# sudo chmod 400 /etc/sudoers
+[root@manage ~]# ll /etc/sudoers
+-r--------. 1 root root 3767 9月   7 10:03 /etc/sudoers
+[root@manage ~]#
+```
 
+### 删除Centos6.8 的原生OpenJdk
 > 查看原生OpenJdk
 
 ```
