@@ -18,7 +18,7 @@
 [root@manage ~]# passwd channelmonitor
 ```
 
-## 设置sudo权限
+### 设置sudo权限
 
 > 查看/etc/sudoers 文件权限
 
