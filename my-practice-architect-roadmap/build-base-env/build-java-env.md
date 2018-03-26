@@ -7,11 +7,11 @@
 ### 创建 channelmonitor 用户
 
 > 切换到 root 用户
->
-> ```
->     su root
-> ```
->
+
+ ```
+     su root
+ ```
+
 > 创建 channelmonitor  用户、 用户组、设置密码
 
 ```
