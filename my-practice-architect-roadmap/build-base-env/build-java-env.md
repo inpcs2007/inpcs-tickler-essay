@@ -42,8 +42,8 @@
 > 使用快捷执行命令
 
 ```
-    [root@manage ~]# echo 'channelmonitor ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-    // 内容含义：用户名 channelmonitor 网络中主机=（全部用户）不需要密码：全部范围
+[root@manage ~]# echo 'channelmonitor ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+// 内容含义：用户名 channelmonitor 网络中主机=（全部用户）不需要密码：全部范围
 ```
 
 > 恢复访问权限
@@ -66,60 +66,63 @@ OpenJDK 64-Bit Server VM (build 24.95-b01, mixed mode)
 [channelmonitor@manage ~]$
 ```
 
-\[channelmonitor@manage ~\]$ sudo rpm -qa \| grep java  
+> 查看列出所有被安装的java
+```
+[channelmonitor@manage ~\]$ sudo rpm -qa | grep java  
 tzdata-java-2016c-1.el6.noarch  
-java-1.6.0-openjdk-1.6.0.38-1.13.10.4.el6.x86\_64  
-java-1.7.0-openjdk-1.7.0.99-2.6.5.1.el6.x86\_64  
-\[channelmonitor@manage ~\]$
+java-1.6.0-openjdk-1.6.0.38-1.13.10.4.el6.x86_64  
+java-1.7.0-openjdk-1.7.0.99-2.6.5.1.el6.x86_64  
+
+```
 
 > 卸载CentOS的Java
-
 ```
-yum -y remove java-1.6.0-openjdk-1.6.0.38-1.13.10.4.el6.x86_64
-yum -y remove java-1.7.0-openjdk-1.7.0.99-2.6.5.1.el6.x86_64
+[channelmonitor@manage ~\]$ sudo rm -f /var/run/yum.pid  
+[channelmonitor@manage ~\]$ sudo yum -y remove java-1.6.0-openjdk-1.6.0.38-1.13.10.4.el6.x86_64  
+[channelmonitor@manage ~\]$ sudo yum -y remove java-1.7.0-openjdk-1.7.0.99-2.6.5.1.el6.x86_64
 ```
-
-\[channelmonitor@manage ~\]$ sudo rm -f /var/run/yum.pid  
-\[channelmonitor@manage ~\]$ sudo yum -y remove java-1.6.0-openjdk-1.6.0.38-1.13.10.4.el6.x86\_64  
-\[channelmonitor@manage ~\]$ yum -y remove java-1.7.0-openjdk-1.7.0.99-2.6.5.1.el6.x86\_64
 
 > 查看 java 版本  
-> \[channelmonitor@manage ~\]$ java -version  
-> bash: /usr/bin/java: 没有那个文件或目录  
-> \[channelmonitor@manage ~\]$
->
+```
+[channelmonitor@manage ~\]$ java -version  
+bash: /usr/bin/java: 没有那个文件或目录  
+[channelmonitor@manage ~\]$
+```
+
+### 安装sun的jdk
+
 > 安装sun的jdk
 
 ```
 [channelmonitor@manage devsoft]$ sudo tar -xzvf jdk-8u144-linux-x64.tar.gz -C /usr/
-
 [channelmonitor@manage usr]$ sudo mv jdk1.8.0_144 java
-
 [channelmonitor@manage usr]$ sudo chown channelmonitor:channelmonitor java
 ```
 
 > 编辑 profile 文件  
-> \[channelmonitor@manage usr\]$ sudo vim /etc/profile
->
-> ```
-> export JAVA_HOME=/usr/java  
-> export JRE_HOME=/usr/java/jre   
-> export CLASSPATH=$JAVA_HOME/lib   
-> export PATH=:$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
-> ```
->
-> 修改 使之生效  
-> \[channelmonitor@manage usr\]$ source /etc/profile
->
+[channelmonitor@manage usr\]$ sudo vim /etc/profile
+
+```
+export JAVA_HOME=/usr/java  
+export JRE_HOME=/usr/java/jre   
+export CLASSPATH=$JAVA_HOME/lib   
+export PATH=:$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+```
+
+> 修改使之生效
+
+```
+[channelmonitor@manage usr\]$ source /etc/profile
+```
 > 验证 java 版本
->
-> ```
-> [channelmonitor@manage usr]$ java -version
-> java version "1.8.0_144"
-> Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
-> Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
-> [channelmonitor@manage usr]$
-> ```
+
+```
+[channelmonitor@manage usr]$ java -version
+java version "1.8.0_144"
+Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
+Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
+[channelmonitor@manage usr]$
+```
 
 
 
