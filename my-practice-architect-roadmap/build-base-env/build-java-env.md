@@ -1,5 +1,7 @@
 # 构建java的基础环境
 
+在Centos6为基础系统环境构建java的基础环境，根据具体步骤构建出本文。
+
 ##  创建用户
 ### 创建 channelmonitor 用户
 > 切换到 root 用户
