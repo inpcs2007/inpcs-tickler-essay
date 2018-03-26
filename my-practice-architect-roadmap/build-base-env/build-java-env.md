@@ -76,13 +76,15 @@ java-1.7.0-openjdk-1.7.0.99-2.6.5.1.el6.x86_64
 ```
 
 > 卸载CentOS的Java
+
 ```
 [channelmonitor@manage ~\]$ sudo rm -f /var/run/yum.pid  
 [channelmonitor@manage ~\]$ sudo yum -y remove java-1.6.0-openjdk-1.6.0.38-1.13.10.4.el6.x86_64  
 [channelmonitor@manage ~\]$ sudo yum -y remove java-1.7.0-openjdk-1.7.0.99-2.6.5.1.el6.x86_64
 ```
 
-> 查看 java 版本  
+> 查看 java 版本
+
 ```
 [channelmonitor@manage ~\]$ java -version  
 bash: /usr/bin/java: 没有那个文件或目录  
@@ -99,7 +101,8 @@ bash: /usr/bin/java: 没有那个文件或目录
 [channelmonitor@manage usr]$ sudo chown channelmonitor:channelmonitor java
 ```
 
-> 编辑 profile 文件  
+> 编辑 profile 文件
+
 [channelmonitor@manage usr\]$ sudo vim /etc/profile
 
 ```
@@ -114,6 +117,7 @@ export PATH=:$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
 ```
 [channelmonitor@manage usr\]$ source /etc/profile
 ```
+
 > 验证 java 版本
 
 ```
