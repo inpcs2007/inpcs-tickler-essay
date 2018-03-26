@@ -1,3 +1,5 @@
+构建java的基础环境
+
 #  创建用户
 ## 创建 channelmonitor 用户
 > 切换到 root 用户
