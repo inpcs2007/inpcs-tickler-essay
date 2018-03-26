@@ -72,7 +72,6 @@ OpenJDK 64-Bit Server VM (build 24.95-b01, mixed mode)
 tzdata-java-2016c-1.el6.noarch  
 java-1.6.0-openjdk-1.6.0.38-1.13.10.4.el6.x86_64  
 java-1.7.0-openjdk-1.7.0.99-2.6.5.1.el6.x86_64  
-
 ```
 
 > 卸载CentOS的Java
