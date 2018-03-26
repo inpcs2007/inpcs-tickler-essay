@@ -67,6 +67,7 @@ OpenJDK 64-Bit Server VM (build 24.95-b01, mixed mode)
 ```
 
 > 查看列出所有被安装的java
+
 ```
 [channelmonitor@manage ~\]$ sudo rpm -qa | grep java  
 tzdata-java-2016c-1.el6.noarch  
