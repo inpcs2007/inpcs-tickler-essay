@@ -143,16 +143,26 @@ Welcome to the MySQL monitor.  Commands end with ; or \g.
 
 ### _配置mysql的开机自启动_
 
-> 配置开机启动  
+> 生成mysql全局配置文件
+
 ```
 [root@manage support-files ] # sudo cp my-medium.cnf /etc/my.cnf
 ```
-\[root@manage support-files\]\# sudo cp mysql.server /etc/init.d/mysql  
-\[root@manage support-files\]\# chkconfig mysql on
+
+> 生成开机自启动文件
+
+```
+[root@manage support-files ] # sudo cp mysql.server /etc/init.d/mysql
+```
+
+> 添加开机自启动项
+
+[root@manage support-files ] # chkconfig mysql on
 
 ```
 mysql              0:关闭    1:关闭    2:启用    3:启用    4:启用    5:启用    6:关闭
 ```
+编辑自启动文件
 
 > 修改 profile 文件
 
