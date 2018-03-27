@@ -82,19 +82,27 @@ mysql-libs.x86_64       5.1.73-7.el6    @anaconda-CentOS-201605220104.x86_64/6.8
 [root@manage ~]#
 ```
 
-> 测试安装 libaio 包  
-> \[root@manage local\]\# yum install libaio -y  
-> 已加载插件：fastestmirror, refresh-packagekit, security  
-> 设置安装进程  
-> Loading mirror speeds from cached hostfile  
-> 包 libaio-0.3.107-10.el6.x86\_64 已安装并且是最新版本  
-> 无须任何处理  
-> \[root@manage local\]\#
->
+> 测试安装 libaio 包
+
+```  
+[root@manage local]# yum install libaio -y  
+已加载插件：fastestmirror, refresh-packagekit, security  
+设置安装进程  
+Loading mirror speeds from cached hostfile包 libaio-0.3.107-10.el6.x86_64 已安装并且是最新版本  
+无须任何处理  
+[root@manage local ] #
+```
+
+### _mysql安装_
+
 > 初始化mysql  
-> 在mysql目录下scripts/mysql\_install\_db --user=mysql  
-> \[root@manage mysql\]\# scripts/mysql\_install\_db --user=mysql
->
+
+在mysql目录下执行【***scripts/mysql_install_db --user=mysql***】命令，完成初始化操作。
+
+```
+[root@manage mysql ] # scripts/mysql_install_db --user=mysql
+```
+
 > 启动mysql  
 >  /usr/local/mysql/support-files/mysql.server start
 >
