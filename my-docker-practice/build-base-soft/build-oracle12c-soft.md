@@ -8,7 +8,7 @@
 inpcs@inpcshome:~$ sudo docker search oracle
 ```
 
-> 执行后显示的内容如下：
+#### 执行后显示的内容如下：
 
 ```
 NAME                                DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
@@ -39,12 +39,12 @@ spansari/nodejs-oracledb            nodejs with oracledb installed globally on..
 trollin/oraclelinux
 ```
 
-### _选择12C的版本\[sath89/oracle-12c\]_
-
-sudo docker pull sath89/oracle-12c
+### _选择12C的版本[sath89/oracle-12c]_
+执行[***sudo docker pull sath89/oracle-12c***]
 
 ```
 inpcs@inpcshome:~$ sudo docker pull sath89/oracle-12c
+
 Using default tag: latest
 latest: Pulling from sath89/oracle-12c
 Digest: sha256:6e9de6f1e5927e6012f1d824f998a20b7cb53f3042231869d5d6826fddb66282
