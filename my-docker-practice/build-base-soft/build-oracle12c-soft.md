@@ -5,7 +5,7 @@
 ### _从docker的hub中搜索oracle镜像_
 
 ```
-inpcs@inpcsPC:~$ sudo docker search oracle
+inpcs@inpcshome:~$ sudo docker search oracle
 ```
 
 > 执行后显示的内容如下：
@@ -44,7 +44,7 @@ trollin/oraclelinux
 sudo docker pull sath89/oracle-12c
 
 ```
-inpcs@inpcsPC:~$ sudo docker pull sath89/oracle-12c
+inpcs@inpcshome:~$ sudo docker pull sath89/oracle-12c
 Using default tag: latest
 latest: Pulling from sath89/oracle-12c
 Digest: sha256:6e9de6f1e5927e6012f1d824f998a20b7cb53f3042231869d5d6826fddb66282
@@ -56,13 +56,13 @@ Status: Image is up to date for sath89/oracle-12c:latest
 sudo docker images
 
 ```
-inpcs@inpcsPC:~$ sudo docker images
+inpcs@inpcshome:~$ sudo docker images
 REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
 mongo                           latest              b39de1d79a53        3 weeks ago         359 MB
 redis                           latest              d4f259423416        5 weeks ago         106 MB
 sath89/oracle-12c               latest              b93c23bfc173        6 weeks ago         5.7 GB
 mkoester/ubuntu12.04-mysql5.5   latest              7d4a3356364e        3 years ago         303 MB
-inpcs@inpcsPC:~$
+inpcs@inpcshome:~$
 ```
 
 # 使用images 创建一个container，并运行其上的oracle数据库
@@ -70,9 +70,9 @@ inpcs@inpcsPC:~$
 sudo docker run -d -p 8080:8080 -p 1521:1521 -v /media/inpcs/ee43d9f8-d8ba-44d0-9a34-190a5a2d2a38/data/oracleData/data:/u01/app/oracle sath89/oracle-12c
 
 ```
-inpcs@inpcsPC:~$ sudo docker run -d -p 8080:8080 -p 1521:1521 -v /media/inpcs/ee43d9f8-d8ba-44d0-9a34-190a5a2d2a38/data/oracleData/data:/u01/app/oracle sath89/oracle-12c
+inpcs@inpcshome:~$ sudo docker run -d -p 8080:8080 -p 1521:1521 -v /media/inpcs/ee43d9f8-d8ba-44d0-9a34-190a5a2d2a38/data/oracleData/data:/u01/app/oracle sath89/oracle-12c
 55f12846e98b2c7dde5a7f5a01342a100587c78f2815f47a4a8e80fd95c04964
-inpcs@inpcsPC:~$
+inpcs@inpcshome:~$
 ```
 
 # 查看运行日志信息
@@ -80,7 +80,7 @@ inpcs@inpcsPC:~$
 sudo docker logs -f 55f12846e98b2c7dde5a7f5a01342a100587c78f2815f47a4a8e80fd95c04964
 
 ```
-inpcs@inpcsPC:~$ sudo docker logs -f 55f12846e98b2c7dde5a7f5a01342a100587c78f2815f47a4a8e80fd95c04964
+inpcs@inpcshome:~$ sudo docker logs -f 55f12846e98b2c7dde5a7f5a01342a100587c78f2815f47a4a8e80fd95c04964
 Database not initialized. Initializing database.
 Starting tnslsnr
 Copying database files
@@ -126,10 +126,10 @@ Database ready to use. Enjoy! ;)
 sudo docker ps
 
 ```
-inpcs@inpcsPC:~$ sudo docker ps
+inpcs@inpcshome:~$ sudo docker ps
 CONTAINER ID        IMAGE                                  COMMAND              CREATED             STATUS              PORTS                                            NAMES
 55f12846e98b        sath89/oracle-12c                      "/entrypoint.sh "    28 minutes ago      Up 28 minutes       0.0.0.0:1521->1521/tcp, 0.0.0.0:8080->8080/tcp   elated_cori
-inpcs@inpcsPC:~$
+inpcs@inpcshome:~$
 ```
 
 # 进入oracle container容器内部
@@ -137,7 +137,7 @@ inpcs@inpcsPC:~$
 sudo docker exec -it 55f12846e98b /bin/bash
 
 ```
-inpcs@inpcsPC:~$ sudo docker exec -it 55f12846e98b /bin/bash
+inpcs@inpcshome:~$ sudo docker exec -it 55f12846e98b /bin/bash
 root@55f12846e98b:/#
 ```
 
