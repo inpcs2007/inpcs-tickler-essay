@@ -84,7 +84,7 @@ mysql-libs.x86_64       5.1.73-7.el6    @anaconda-CentOS-201605220104.x86_64/6.8
 
 > 测试安装 libaio 包
 
-```  
+```
 [root@manage local]# yum install libaio -y  
 已加载插件：fastestmirror, refresh-packagekit, security  
 设置安装进程  
@@ -102,9 +102,9 @@ export PATH
 
 ### _mysql安装_
 
-> 初始化mysql  
+> 初始化mysql
 
-在mysql目录下执行【***scripts/mysql_install_db --user=mysql***】命令，完成初始化操作。
+在mysql目录下执行【_**scripts/mysql\_install\_db --user=mysql**_】命令，完成初始化操作。
 
 ```
 [root@manage mysql ] # scripts/mysql_install_db --user=mysql
@@ -133,11 +133,11 @@ export PATH
 ### _mysql的修改密码_
 
 > 修改密码  
-[root@manage mysql ] # ./bin/mysqladmin -u root password '123456'
-
+> \[root@manage mysql \] \# ./bin/mysqladmin -u root password '123456'
+>
 > 使用root用户登录
 
-```  
+```
 [root@manage bin ] # pwd  
 /usr/local/mysql/bin  
 [root@manage bin ] # mysql -u root -p
@@ -171,7 +171,6 @@ Welcome to the MySQL monitor.  Commands end with ; or \g.
 mysql              0:关闭    1:关闭    2:启用    3:启用    4:启用    5:启用    6:关闭
 ```
 
-
 ### _配置防火墙_
 
 > 添加3306（mysql5.5）,8080（tomcat）到防火墙的规则列表中
@@ -181,16 +180,17 @@ mysql              0:关闭    1:关闭    2:启用    3:启用    4:启用    5
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
 ```
 
-> 开启，停止防火墙  
+> 开启，停止防火墙
 
 ```
 /etc/init.d/iptables stop
 ```
 
 ### _mysql的常用配置_
-> 忽略大小写（表名）  
 
-编辑my.cnf文件在[mysqld]下加入【***lower_case_table_names=1***】 
+> 忽略大小写（表名）
+
+编辑my.cnf文件在\[mysqld\]下加入【_**lower\_case\_table\_names=1**_】
 
 ```
 lower_case_table_names=1
@@ -204,17 +204,19 @@ set global max_connect_errors = 500;
 
 ### _安装遇到的问题总结_
 
-> 10065  
+> 10065
 
-是否开启mysql远程访问权限  
+是否开启mysql远程访问权限
 
-> 10061  
+> 10061
 
-看看mysql服务是否启动（ps -ef | grep mysql)
+看看mysql服务是否启动（ps -ef \| grep mysql\)
 
 > 另外一个程序锁定了 yum；等待它退出……
 
 ```
 [channelmonitor@manage \]$ sudo rm -f /var/run/yum.pid
 ```
+
+
 
