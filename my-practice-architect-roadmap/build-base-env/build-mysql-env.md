@@ -22,10 +22,10 @@ mysql-libs.x86_64       5.1.73-7.el6    @anaconda-CentOS-201605220104.x86_64/6.8
 ```
 
 > 解压 myslq5.5  
-> \[channelmonitor@manage devsoft\]$ sudo mkdir /usr/local/mysql  
-> \[channelmonitor@manage devsoft\]$ sudo tar -xzvf mysql-5.5.57-linux-glibc2.12-x86\_64.tar.gz -C /usr/local/  
-> \[channelmonitor@manage local\]$ sudo mv mysql-5.5.57-linux-glibc2.12-x86\_64 mysql
->
+[channelmonitor@manage devsoft ]$ sudo mkdir /usr/local/mysql  
+[channelmonitor@manage devsoft ]$ sudo tar -xzvf mysql-5.5.57-linux-glibc2.12-x86_64.tar.gz -C /usr/local/  
+[channelmonitor@manage local ]$ sudo mv mysql-5.5.57-linux-glibc2.12-x86_64 mysql
+
 > 添加mysql用户组和用户  
 > \[root@manage ~\]\# groupadd -g 3000 mysql  
 > \[root@manage ~\]\# useradd -u 4000 -g mysql mysql  
