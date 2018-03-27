@@ -172,9 +172,9 @@ mysql              0:关闭    1:关闭    2:启用    3:启用    4:启用    5
 ```
 
 
-### 配置防火墙
+### _配置防火墙_
 
-> 添加3306（mysql5.5）,8080（tomcat）
+> 添加3306（mysql5.5）,8080（tomcat）到防火墙的规则列表中
 
 ```
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
@@ -182,27 +182,39 @@ mysql              0:关闭    1:关闭    2:启用    3:启用    4:启用    5
 ```
 
 > 开启，停止防火墙  
-> /etc/init.d/iptables stop
->
-> 忽略大小写（表名）  
-> 在\[mysqld\]下加入一行  
-> \[root@manage \]\# vim /etc/my.cnf
->
-> ```
-> lower_case_table_names=1
-> ```
 
-# 安装遇到的问题总结
+```
+/etc/init.d/iptables stop
+```
+
+### _mysql的常用配置_
+> 忽略大小写（表名）  
+
+编辑my.cnf文件在[mysqld]下加入【***lower_case_table_names=1***】 
+
+```
+lower_case_table_names=1
+```
+
+> 设置默认IP连接数量限制10，改500
+
+```
+set global max_connect_errors = 500;
+```
+
+### _安装遇到的问题总结_
 
 > 10065  
-> 是否开启mysql远程访问权限  
+
+是否开启mysql远程访问权限  
+
 > 10061  
-> 看看mysql服务是否启动（ps -ef \| grep mysql\)
->
-> 设置默认IP连接数量限制10，改500  
-> set global max\_connect\_errors = 500;
->
+
+看看mysql服务是否启动（ps -ef | grep mysql)
+
 > 另外一个程序锁定了 yum；等待它退出……
 
-\[channelmonitor@manage \]$ sudo rm -f /var/run/yum.pid
+```
+[channelmonitor@manage \]$ sudo rm -f /var/run/yum.pid
+```
 
