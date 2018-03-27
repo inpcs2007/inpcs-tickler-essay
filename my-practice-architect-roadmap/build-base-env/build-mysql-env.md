@@ -103,25 +103,50 @@ Loading mirror speeds from cached hostfile包 libaio-0.3.107-10.el6.x86_64 已�
 [root@manage mysql ] # scripts/mysql_install_db --user=mysql
 ```
 
-> 启动mysql  
->  /usr/local/mysql/support-files/mysql.server start
->
-> 修改密码  
-> \[root@manage mysql\]\# ./bin/mysqladmin -u root password '123456'
->
-> 登录  
-> \[root@manage bin\]\# pwd  
-> /usr/local/mysql/bin  
-> \[root@manage bin\]\# mysql -u root -p
->
-> # 输入123456
->
-> Enter password:  
-> Welcome to the MySQL monitor.  Commands end with ; or \g.
->
-> 配置开机启动  
-> \[root@manage support-files\]\# sudo cp my-medium.cnf /etc/my.cnf
+### _mysql的启动与停止_
 
+> 启动mysql
+
+```
+/usr/local/mysql/support-files/mysql.server start
+```
+
+> 停止 mysql
+
+```
+/usr/local/mysql/support-files/mysql.server stop
+```
+
+> 重启 mysql
+
+```
+/usr/local/mysql/support-files/mysql.server restart
+```
+
+### _mysql的修改密码_
+
+> 修改密码  
+[root@manage mysql ] # ./bin/mysqladmin -u root password '123456'
+
+> 使用root用户登录
+
+```  
+[root@manage bin ] # pwd  
+/usr/local/mysql/bin  
+[root@manage bin ] # mysql -u root -p
+```
+> 输入密码【123456】
+```
+Enter password:  
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+```
+
+### _配置mysql的开机自启动_
+
+> 配置开机启动  
+```
+[root@manage support-files ] # sudo cp my-medium.cnf /etc/my.cnf
+```
 \[root@manage support-files\]\# sudo cp mysql.server /etc/init.d/mysql  
 \[root@manage support-files\]\# chkconfig mysql on
 
