@@ -5,29 +5,41 @@
 ### _Ubuntu14.04下构建docker-ce环境_
 
 #### 移除原有的docker
-
+```
 sudo apt-get remove docker docker-engine docker.io
+```
 
-## 安装软件
+#### _安装docker-ce前的准备_
 
+> 1. 更新系统补丁，安装必备支撑软件
+
+```
 sudo apt-get update  
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+```
 
-## 添加官方PGP秘钥
+> 2. 添加官方PGP秘钥
 
+```
 curl -fsSL [https://download.docker.com/linux/ubuntu/gpg](https://download.docker.com/linux/ubuntu/gpg) \| sudo apt-key add -
+```
 
-## 添加apt安装配置
+> 3. 添加apt源
 
-sudo add-apt-repository "deb \[arch=amd64\] [https://download.docker.com/linux/ubuntu](https://download.docker.com/linux/ubuntu) $\(lsb\_release -cs\) stable"
+```
+sudo add-apt-repository "deb [arch=amd64] [https://download.docker.com/linux/ubuntu](https://download.docker.com/linux/ubuntu) $(lsb_release -cs) stable"
+```
 
-## 安装
-
+#### _安装docker-ce_
+```
 sudo apt-get update  
 sudo apt-get install docker-ce
+```
 
-## 使用docker时取消sudo命令
+* 易用性配置
+> 使用docker时取消sudo命令
 
+```
 sudo gpasswd -a username docker  
 sudo service docker restart
-
+```
