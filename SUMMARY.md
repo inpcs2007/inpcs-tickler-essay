@@ -10,7 +10,7 @@
 * [4.我的实践之机器学习](4.my-machine-learning-practice.md)
   * [构建机器学习基础环境](my-machine-learning-practice/build-base-env/bulid-machine-learning-env.md)
 * [5.我的实践之架构师之路](5.my-practice-architect-roadmap.md)
-  * [构建基础环境之java基础环境](my-practice-architect-roadmap/build-base-env/build-java-env.md)
+* * [构建基础环境之java基础环境](my-practice-architect-roadmap/build-base-env/build-java-env.md)
   * [构建基础环境之mysql基础环境](my-practice-architect-roadmap/build-base-env/build-mysql-env.md)
   * [构建基础环境之tomcat基础环境](my-practice-architect-roadmap/build-base-env/build-tomcat-env.md)
 * [6.我的实践之容器](6.my-docker-architect.md)
