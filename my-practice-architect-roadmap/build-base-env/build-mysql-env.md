@@ -21,10 +21,12 @@ mysql-libs.x86_64       5.1.73-7.el6    @anaconda-CentOS-201605220104.x86_64/6.8
 [channelmonitor@manage ~]$ sudo yum -y remove mysql-libs.x86_64
 ```
 
-> 解压 myslq5.5  
+> 解压 myslq5.5
+```
 [channelmonitor@manage devsoft ]$ sudo mkdir /usr/local/mysql  
 [channelmonitor@manage devsoft ]$ sudo tar -xzvf mysql-5.5.57-linux-glibc2.12-x86_64.tar.gz -C /usr/local/  
 [channelmonitor@manage local ]$ sudo mv mysql-5.5.57-linux-glibc2.12-x86_64 mysql
+```
 
 ### _添加mysql用户组和用户_
 
@@ -42,7 +44,7 @@ mysql-libs.x86_64       5.1.73-7.el6    @anaconda-CentOS-201605220104.x86_64/6.8
 [root@manage local]# ll
 ```  
 
-## 设置sudo权限
+### 设置sudo权限
 
 > 查看/etc/sudoers 文件权限
 
@@ -53,32 +55,32 @@ mysql-libs.x86_64       5.1.73-7.el6    @anaconda-CentOS-201605220104.x86_64/6.8
 ```
 
 > 修改sudoers文件权限
->
-> ```
-> [root@manage ~]# ll /etc/sudoers
-> -r--r-----. 1 root root 3729 12月  8 2015 /etc/sudoers
-> [root@manage ~]# sudo chmod 775 /etc/sudoers
-> [root@manage ~]# ll /etc/sudoers
-> -rwxrwxr-x. 1 root root 3729 12月  8 2015 /etc/sudoers
-> [root@manage ~]#
-> ```
->
+
+```
+[root@manage ~]# ll /etc/sudoers
+-r--r-----. 1 root root 3729 12月  8 2015 /etc/sudoers
+[root@manage ~]# sudo chmod 775 /etc/sudoers
+[root@manage ~]# ll /etc/sudoers
+-rwxrwxr-x. 1 root root 3729 12月  8 2015 /etc/sudoers
+[root@manage ~]#
+```
+
 > 使用快捷执行命令
->
-> ```
->     [root@manage ~]# echo 'mysql ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
->     // 内容含义：用户名 mysql 网络中主机=（全部用户）不需要密码：全部范围
-> ```
->
+
+```
+[root@manage ~]# echo 'mysql ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+// 内容含义：用户名 mysql 网络中主机=（全部用户）不需要密码：全部范围
+```
+
 > 恢复访问权限
->
-> ```
-> [root@manage ~]# sudo chmod 400 /etc/sudoers
-> [root@manage ~]# ll /etc/sudoers
-> -r--------. 1 root root 3767 9月   7 10:03 /etc/sudoers
-> [root@manage ~]#
-> ```
->
+
+```
+[root@manage ~]# sudo chmod 400 /etc/sudoers
+[root@manage ~]# ll /etc/sudoers
+-r--------. 1 root root 3767 9月   7 10:03 /etc/sudoers
+[root@manage ~]#
+```
+
 > 测试安装 libaio 包  
 > \[root@manage local\]\# yum install libaio -y  
 > 已加载插件：fastestmirror, refresh-packagekit, security  
