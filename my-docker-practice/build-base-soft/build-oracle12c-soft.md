@@ -2,13 +2,15 @@
 
 在Ubuntu14.04为基础系统环境下，构建docker的oracle12c的基础软件环境，根据具体步骤构建出本文。
 
-### _从docker的hub中搜索oracle镜像_
+### 构建oracle12c的软件基础环境
+
+#### _从docker的hub中搜索oracle镜像_
 
 ```
 inpcs@inpcshome:~$ sudo docker search oracle
 ```
 
-#### 执行后显示的内容如下：
+##### 执行后显示的内容如下：
 
 ```
 NAME                                DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
@@ -39,8 +41,8 @@ spansari/nodejs-oracledb            nodejs with oracledb installed globally on..
 trollin/oraclelinux
 ```
 
-### _选择12C的版本[sath89/oracle-12c]_
-执行[***sudo docker pull sath89/oracle-12c***]
+#### _选择12C的版本[sath89/oracle-12c]_
+执行[***sudo docker pull sath89/oracle-12c***]命令
 
 ```
 inpcs@inpcshome:~$ sudo docker pull sath89/oracle-12c
@@ -51,19 +53,17 @@ Digest: sha256:6e9de6f1e5927e6012f1d824f998a20b7cb53f3042231869d5d6826fddb66282
 Status: Image is up to date for sath89/oracle-12c:latest
 ```
 
-# 查看Images文件
+#### _查看Images文件_
 
-sudo docker images
+执行[***sudo docker images***]命令
 
 ```
 inpcs@inpcshome:~$ sudo docker images
 REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
-mongo                           latest              b39de1d79a53        3 weeks ago         359 MB
-redis                           latest              d4f259423416        5 weeks ago         106 MB
 sath89/oracle-12c               latest              b93c23bfc173        6 weeks ago         5.7 GB
-mkoester/ubuntu12.04-mysql5.5   latest              7d4a3356364e        3 years ago         303 MB
-inpcs@inpcshome:~$
+
 ```
+### 创建一个容器并在其上运行oracle12c数据库
 
 # 使用images 创建一个container，并运行其上的oracle数据库
 
