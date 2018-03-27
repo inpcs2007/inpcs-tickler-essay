@@ -27,6 +27,7 @@ mysql-libs.x86_64       5.1.73-7.el6    @anaconda-CentOS-201605220104.x86_64/6.8
 [channelmonitor@manage local ]$ sudo mv mysql-5.5.57-linux-glibc2.12-x86_64 mysql
 
 ### _添加mysql用户组和用户_
+
 ```
 [root@manage ~]# groupadd -g 3000 mysql  
 [root@manage ~]# useradd -u 4000 -g mysql mysql  
@@ -35,22 +36,11 @@ mysql-libs.x86_64       5.1.73-7.el6    @anaconda-CentOS-201605220104.x86_64/6.8
 
 > 更改 /usr/local/mysql的用户和用户组
 
-\[root@manage local\]\# chown -R mysql /usr/local/mysql  
-\[root@manage local\]\# chgrp -R mysql /usr/local/mysql   
-\[root@manage local\]\# ll  
-总用量 44  
-drwxr-xr-x.  2 root  root  4096 9月  23 2011 bin  
-drwxr-xr-x.  2 root  root  4096 9月  23 2011 etc  
-drwxr-xr-x.  2 root  root  4096 9月  23 2011 games  
-drwxr-xr-x.  2 root  root  4096 9月  23 2011 include  
-drwxr-xr-x.  2 root  root  4096 9月  23 2011 lib  
-drwxr-xr-x.  2 root  root  4096 9月  23 2011 lib64  
-drwxr-xr-x.  2 root  root  4096 9月  23 2011 libexec  
-drwxr-xr-x. 13 mysql mysql 4096 9月   7 14:07 mysql  
-drwxr-xr-x.  2 root  root  4096 9月  23 2011 sbin  
-drwxr-xr-x.  5 root  root  4096 10月 24 2016 share  
-drwxr-xr-x.  2 root  root  4096 9月  23 2011 src  
-\[root@manage local\]\#
+```
+[root@manage local]# chown -R mysql /usr/local/mysql  
+[root@manage local]# chgrp -R mysql /usr/local/mysql   
+[root@manage local]# ll
+```  
 
 ## 设置sudo权限
 
