@@ -17,6 +17,7 @@
     * [构建容器之Redis环境](my-docker-practice/build-base-soft/build-redis-soft.md)
     * [构建容器之Tomcat环境](my-docker-practice/build-base-soft/build-tomcat-soft.md)
     * [构建容器之Zabbix环境](my-docker-practice/build-base-soft/build-zabbix-soft.md)
+    * [构建容器之Oracle12c环境](my-docker-practice/build-base-soft/build-oracle12c-soft.md)
 * [6.我的实践之架构师之路](5.my-practice-architect-roadmap.md)
   * [构建基础环境](my-practice-architect-roadmap/build-base-env/build-base-env.md)
     * [构建基础环境之java基础环境](my-practice-architect-roadmap/build-base-env/build-java-env.md)
