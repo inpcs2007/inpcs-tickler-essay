@@ -93,6 +93,13 @@ Loading mirror speeds from cached hostfile包 libaio-0.3.107-10.el6.x86_64 已�
 [root@manage local ] #
 ```
 
+> 修改 profile 文件
+
+```
+PATH=/usr/local/mysql/bin:$PATH
+export PATH
+```
+
 ### _mysql安装_
 
 > 初始化mysql  
@@ -135,7 +142,9 @@ Loading mirror speeds from cached hostfile包 libaio-0.3.107-10.el6.x86_64 已�
 /usr/local/mysql/bin  
 [root@manage bin ] # mysql -u root -p
 ```
+
 > 输入密码【123456】
+
 ```
 Enter password:  
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -157,21 +166,13 @@ Welcome to the MySQL monitor.  Commands end with ; or \g.
 
 > 添加开机自启动项
 
-[root@manage support-files ] # chkconfig mysql on
-
 ```
+[root@manage support-files ] # chkconfig mysql on
 mysql              0:关闭    1:关闭    2:启用    3:启用    4:启用    5:启用    6:关闭
 ```
-编辑自启动文件
 
-> 修改 profile 文件
 
-```
-PATH=/usr/local/mysql/bin:$PATH
-export PATH
-```
-
-# 配置防火墙
+### 配置防火墙
 
 > 添加3306（mysql5.5）,8080（tomcat）
 
