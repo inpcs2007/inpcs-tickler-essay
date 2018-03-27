@@ -15,7 +15,7 @@
     * [构建基础环境之mysql基础环境](my-practice-architect-roadmap/build-base-env/build-mysql-env.md)
     * [构建基础环境之tomcat基础环境](my-practice-architect-roadmap/build-base-env/build-tomcat-env.md)
 * [6.我的实践之容器](6.my-docker-architect.md)
-  * [构建容器基础环境](my-docker-architect/build-docker-env.md)
+  * [构建容器基础环境](my-docker-architect/build-base-env/build-docker-env.md)
 * [7.重要文献](7.my-important-documents)
   * [谷歌的大规模分布式跟踪系统](my-important-documents/dapper-translation.md)
 
