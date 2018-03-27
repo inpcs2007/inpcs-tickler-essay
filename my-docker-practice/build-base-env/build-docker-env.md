@@ -36,7 +36,7 @@ sudo apt-get update
 sudo apt-get install docker-ce
 ```
 
-* 易用性配置
+### 易用性配置
 > 使用docker时取消sudo命令
 
 ```
