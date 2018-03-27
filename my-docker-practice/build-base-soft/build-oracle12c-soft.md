@@ -2,7 +2,8 @@
 
 在Ubuntu14.04为基础系统环境下，构建docker的oracle12c的基础软件环境，根据具体步骤构建出本文。
 
-### 从docker的hub中搜索oracle镜像
+### _从docker的hub中搜索oracle镜像_
+
 ```
 inpcs@inpcsPC:~$ sudo docker search oracle
 ```
@@ -35,10 +36,11 @@ teradatalabs/centos6-java8-oracle   Docker image of CentOS 6 with Oracle JDK 8..
 publicisworldwide/oracle-core       This is the core image based on Oracle Lin...   1                    [OK]
 sigma/nimbus-lock-oracle                                                            0                    [OK]
 spansari/nodejs-oracledb            nodejs with oracledb installed globally on...   0                    
-trollin/oraclelinux   
+trollin/oraclelinux
 ```
 
-### _选择12C的版本[sath89/oracle-12c]_
+### _选择12C的版本\[sath89/oracle-12c\]_
+
 sudo docker pull sath89/oracle-12c
 
 ```
@@ -48,7 +50,9 @@ latest: Pulling from sath89/oracle-12c
 Digest: sha256:6e9de6f1e5927e6012f1d824f998a20b7cb53f3042231869d5d6826fddb66282
 Status: Image is up to date for sath89/oracle-12c:latest
 ```
+
 # 查看Images文件
+
 sudo docker images
 
 ```
@@ -58,18 +62,23 @@ mongo                           latest              b39de1d79a53        3 weeks 
 redis                           latest              d4f259423416        5 weeks ago         106 MB
 sath89/oracle-12c               latest              b93c23bfc173        6 weeks ago         5.7 GB
 mkoester/ubuntu12.04-mysql5.5   latest              7d4a3356364e        3 years ago         303 MB
-inpcs@inpcsPC:~$ 
+inpcs@inpcsPC:~$
 ```
+
 # 使用images 创建一个container，并运行其上的oracle数据库
+
 sudo docker run -d -p 8080:8080 -p 1521:1521 -v /media/inpcs/ee43d9f8-d8ba-44d0-9a34-190a5a2d2a38/data/oracleData/data:/u01/app/oracle sath89/oracle-12c
 
 ```
 inpcs@inpcsPC:~$ sudo docker run -d -p 8080:8080 -p 1521:1521 -v /media/inpcs/ee43d9f8-d8ba-44d0-9a34-190a5a2d2a38/data/oracleData/data:/u01/app/oracle sath89/oracle-12c
 55f12846e98b2c7dde5a7f5a01342a100587c78f2815f47a4a8e80fd95c04964
-inpcs@inpcsPC:~$ 
+inpcs@inpcsPC:~$
 ```
+
 # 查看运行日志信息
+
 sudo docker logs -f 55f12846e98b2c7dde5a7f5a01342a100587c78f2815f47a4a8e80fd95c04964
+
 ```
 inpcs@inpcsPC:~$ sudo docker logs -f 55f12846e98b2c7dde5a7f5a01342a100587c78f2815f47a4a8e80fd95c04964
 Database not initialized. Initializing database.
@@ -110,31 +119,41 @@ found file /docker-entrypoint-initdb.d//docker-entrypoint-initdb.d/*
 Import finished
 
 Database ready to use. Enjoy! ;)
-
 ```
+
 # 查看运行容器信息
+
 sudo docker ps
+
 ```
 inpcs@inpcsPC:~$ sudo docker ps
 CONTAINER ID        IMAGE                                  COMMAND              CREATED             STATUS              PORTS                                            NAMES
 55f12846e98b        sath89/oracle-12c                      "/entrypoint.sh "    28 minutes ago      Up 28 minutes       0.0.0.0:1521->1521/tcp, 0.0.0.0:8080->8080/tcp   elated_cori
-inpcs@inpcsPC:~$ 
+inpcs@inpcsPC:~$
 ```
+
 # 进入oracle container容器内部
+
 sudo docker exec -it 55f12846e98b /bin/bash
-```
-inpcs@inpcsPC:~$ sudo docker exec -it 55f12846e98b /bin/bash
-root@55f12846e98b:/# 
 
 ```
+inpcs@inpcsPC:~$ sudo docker exec -it 55f12846e98b /bin/bash
+root@55f12846e98b:/#
+```
+
 # 切换到oracle用户
+
 su oracle
+
 ```
 root@55f12846e98b:/# su oracle
-oracle@55f12846e98b:/$ 
+oracle@55f12846e98b:/$
 ```
+
 # 使用sqlplus
-$ORACLE_HOME/bin/sqlplus / as sysdba
+
+$ORACLE\_HOME/bin/sqlplus / as sysdba
+
 ```
 oracle@55f12846e98b:/$ $ORACLE_HOME/bin/sqlplus / as sysdba
 
@@ -146,17 +165,14 @@ Copyright (c) 1982, 2014, Oracle.  All rights reserved.
 Connected to:
 Oracle Database 12c Standard Edition Release 12.1.0.2.0 - 64bit Production
 
-SQL> 
-
+SQL>
 ```
+
 # Oracle实例相关信息
 
-|hostname |prot| sid|username|password|
-|       - | :- | -: |     -: |     -: | 
-|localhost|1521|xe  |system  |oracle  |
-
-
-
-
+| hostname | prot | sid | username | password |
+| --- | :--- | ---: | ---: | ---: |
+| localhost | 1521 | xe | system | oracle |
 
 接下来就可以快速使用Oracle12C了
+
