@@ -50,9 +50,13 @@ Dapper–Google生产环境下的分布式跟踪系统，应运而生。那么�
 
 在Dapper跟踪树结构中，树节点是整个架构的基本单元，而每一个节点又是对span的引用。节点之间的连线表示的span和它的父span直接的关系。虽然span在日志文件中只是简单的代表span的开始和结束时间，他们在整个树形结构中却是相对独立的，任何RPC相关的时间数据、零个或多个特定应用程序的Annotation的相关内容会在2.3节中讨论。
 
+![](/my-important-documents/dapper-translation/img2.png)
+
 图2：5个span在Dapper跟踪树种短暂的关联关系
 
 在图2中说明了span在一个大的跟踪过程中是什么样的。Dapper记录了span名称，以及每个span的ID和父ID，以重建在一次追踪过程中不同span之间的关系。如果一个span没有父ID被称为root span。所有span都挂在一个特定的跟踪上，也共用一个跟踪id（在图中未示出）。所有这些ID用全局唯一的64位整数标示。在一个典型的Dapper跟踪中，我们希望为每一个RPC对应到一个单一的span上，而且每一个额外的组件层都对应一个跟踪树型结构的层级。
+
+![](/my-important-documents/dapper-translation/img3.png)
 
 图3：在图2中所示的一个单独的span的细节图
 
@@ -71,6 +75,8 @@ Dapper的跟踪数据是独立于语言的，很多在生产环境中的跟踪�
 
 2.3 Annotation
 
+![](/my-important-documents/dapper-translation/img4.png)
+
 上述植入点足够推导出复杂的分布式系统的跟踪细节，使得Dapper的核心功能在不改动Google应用的情况下可用。然而，Dapper还允许应用程序开发人员在Dapper跟踪的过程中添加额外的信息，以监控更高级别的系统行为，或帮助调试问题。我们允许用户通过一个简单的API定义带时间戳的Annotation，核心的示例代码入图4所示。这些Annotation可以添加任意内容。为了保护Dapper的用户意外的过分热衷于日志的记录，每一个跟踪span有一个可配置的总Annotation量的上限。但是，应用程序级的Annotation是不能替代用于表示span结构的信息和记录着RPC相关的信息。
 
 除了简单的文本Annotation，Dapper也支持的key-value映射的 Annotation，提供给开发人员更强的跟踪能力，如持续的计数器，二进制消息记录和在一个进程上跑着的任意的用户数据。键值对的Annotation方式用来在分布式追踪的上下文中定义某个特定应用程序的相关类型。
@@ -78,6 +84,8 @@ Dapper的跟踪数据是独立于语言的，很多在生产环境中的跟踪�
 2.4 采样率
 
 低损耗的是Dapper的一个关键的设计目标，因为如果这个工具价值未被证实但又对性能有影响的话，你可以理解服务运营人员为什么不愿意部署它。况且，我们想让开发人员使用Annotation的API，而不用担心额外的开销。我们还发现，某些类型的Web服务对植入带来的性能损耗确实非常敏感。因此，除了把Dapper的收集工作对基本组件的性能损耗限制的尽可能小之外，我们还有进一步控制损耗的办法，那就是遇到大量请求时只记录其中的一小部分。我们将在4.4节中讨论跟踪的采样率方案的更多细节。
+
+![](/my-important-documents/dapper-translation/img5.png)
 
 图5：Dapper收集管道的总览
 
@@ -145,11 +153,15 @@ Dapper的渗透可以总结为两个方面：一方面是可以创建Dapper跟�
 
 Dapper也是一个带宽资源的轻量级的消费者，每一个span在我们的仓库中传输只占用了平均426的byte。作为网络行为中的极小部分，Dapper的数据收集在Google的生产环境中的只占用了0.01%的网络资源。
 
+![](/my-important-documents/dapper-translation/table1.png)
+
 表1：Dapper守护进程在负载测试时的CPU资源使用率
 
 4.3 在生产环境下对负载的影响
 
 每个请求都会利用到大量的服务器的高吞吐量的线上服务，这是对有效跟踪最主要的需求之一；这种情况需要生成大量的跟踪数据，并且他们对性能的影响是最敏感的。在表2中我们用集群下的网络搜索服务作为例子，我们通过调整采样率，来衡量Dapper在延迟和吞吐量方面对性能的影响。
+
+![](/my-important-documents/dapper-translation/table2.png)
 
 表2：网络搜索集群中，对不同采样率对网络延迟和吞吐的影响。延迟和吞吐的实验误差分别是2.5%和0.15%。
 
@@ -198,7 +210,7 @@ DAPI在谷歌的使用有三类：使利用DAPI的持续的线上Web应用，维
 
 5.2 Dapper的用户接口
 
-绝大多数用户使用发生在基于web的用户交互接口。篇幅有限，我们不能列出每一个特点，而只能把典型的用户工作流在图6中展示。
+绝大多数用户使用发生在基于web的用户交互接口。篇幅有限，我们不能列出每一个特点，而只能把典型的用户工作流在图6中展示。![](/my-important-documents/dapper-translation/img6.png)
 
 图6
 
