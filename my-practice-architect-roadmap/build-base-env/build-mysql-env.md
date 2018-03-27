@@ -26,7 +26,7 @@ mysql-libs.x86_64       5.1.73-7.el6    @anaconda-CentOS-201605220104.x86_64/6.8
 [channelmonitor@manage devsoft ]$ sudo tar -xzvf mysql-5.5.57-linux-glibc2.12-x86_64.tar.gz -C /usr/local/  
 [channelmonitor@manage local ]$ sudo mv mysql-5.5.57-linux-glibc2.12-x86_64 mysql
 
-### _添加mysql用户组和用户_
+### <font color=#00ffff size=72>_添加mysql用户组和用户_</font>
 ```
 [root@manage ~]# groupadd -g 3000 mysql  
 [root@manage ~]# useradd -u 4000 -g mysql mysql  
