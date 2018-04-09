@@ -93,6 +93,7 @@ bash: /usr/bin/java: 没有那个文件或目录
 
 ### 安装sun的jdk
 
+#### 方式一： 解压到（/usr/java/)下安装
 > 安装sun的jdk
 
 ```
@@ -122,6 +123,42 @@ export PATH=:$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
 
 ```
 [channelmonitor@manage usr]$ java -version
+java version "1.8.0_144"
+Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
+Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
+[channelmonitor@manage usr]$
+```
+
+#### 方式二： 软连接方式安装（推荐）
+> 安装sun的jdk
+
+```
+[channelmonitor@manage devsoft]$ tar -xzvf jdk-8u161-linux-x64.tar.gz 
+[channelmonitor@manage devsoft]$ chown -R root:root jdk1.8.0_161
+[channelmonitor@manage devsoft]$ sudo ln -s /home/inpcs/devsoft/jdk1.8.0_161 /usr/local/jdk
+```
+
+> 编辑 profile 文件
+
+[channelmonitor@manage devsoft\]$ sudo vim /etc/profile
+
+```
+export JAVA_HOME=/usr/local/jdk 
+export CLASSPATH=${JAVA_HOME}/lib    
+export JRE_HOME=${JAVA_HOME}/jre    
+export PATH=$PATH:${JAVA_HOME}/bin:$JRE_HOME/bin
+```
+
+> 修改使之生效
+
+```
+[channelmonitor@manage devsoft\]$ source /etc/profile
+```
+
+> 验证 java 版本
+
+```
+[channelmonitor@manage devsoft]$ java -version
 java version "1.8.0_144"
 Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
 Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
