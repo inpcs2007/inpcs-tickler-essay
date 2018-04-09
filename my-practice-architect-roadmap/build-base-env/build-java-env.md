@@ -134,7 +134,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
 
 ```
 [channelmonitor@manage devsoft]$ tar -xzvf jdk-8u161-linux-x64.tar.gz 
-[channelmonitor@manage devsoft]$ chown -R root:root jdk1.8.0_161
+[channelmonitor@manage devsoft]$ sudo chown -R root:root jdk1.8.0_161
 [channelmonitor@manage devsoft]$ sudo ln -s /home/inpcs/devsoft/jdk1.8.0_161 /usr/local/jdk
 ```
 
