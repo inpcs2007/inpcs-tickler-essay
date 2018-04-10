@@ -51,12 +51,11 @@ http://localhost:20012
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-01.png)
 
-
 ### 3.2 选择数据库的安装选项
 
-选择 I‘ll set it up mysqlf
+选择 My Own Database选项，并填写如下信息内容
 
-
+![](/my-practice-architect-roadmap/build-jira-soft/jira-02.png)
 
 ### 2.1 dockerFile位置
 
