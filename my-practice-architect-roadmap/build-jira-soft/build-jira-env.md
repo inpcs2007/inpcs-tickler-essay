@@ -80,14 +80,17 @@ http://localhost:20012
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-06.png)
 
-
 > 申请完毕后点击【Yes】，将会迁移到本地安装的Jira页面中
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-07.png)
 
+> 点击下一步
 
-> 
+![](/my-practice-architect-roadmap/build-jira-soft/jira-08.png)
 
+
+
+![](/my-practice-architect-roadmap/build-jira-soft/jira-9.png)
 
 ### 2.1 dockerFile位置
 
