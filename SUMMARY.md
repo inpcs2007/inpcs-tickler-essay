@@ -23,6 +23,8 @@
     * [构建基础环境之java基础环境](my-practice-architect-roadmap/build-base-env/build-java-env.md)
     * [构建基础环境之mysql基础环境](my-practice-architect-roadmap/build-base-env/build-mysql-env.md)
     * [构建基础环境之tomcat基础环境](my-practice-architect-roadmap/build-base-env/build-tomcat-env.md)
+  * [jira学习笔记](my-practice-architect-roadmap/build-jira-env/jira-info.md)
+    * [构建基础环境之jira环境](my-practice-architect-roadmap/build-jira-env/build-jira-env.md)
 * [7.重要文献](7.my-important-documents.md)
   * [谷歌的大规模分布式跟踪系统](my-important-documents/dapper-translation.md)
 * [8.重要资料](8.my-important-infodata.md)
