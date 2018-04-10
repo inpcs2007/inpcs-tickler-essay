@@ -111,9 +111,7 @@ http://localhost:20012
 ### 3.1 选择Create project
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-13.png)
 
-### 3.1 选择Create project
-
-
+### 3.2 选择Scrum softwoar development
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-14.png)
 
 
