@@ -93,7 +93,7 @@ http://localhost:20012
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-9.png)
 
-* 如果出现错误，重新执行4.1
+* <font color=#DC143C>如果出现错误，重新执行4.1</font>
 
 ### 2.1 dockerFile位置
 
