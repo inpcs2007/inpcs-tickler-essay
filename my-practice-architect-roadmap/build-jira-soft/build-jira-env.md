@@ -109,19 +109,21 @@ http://localhost:20012
 ## 4. 创建一个新的工程
 
 ### 3.1 选择Create project
-
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-13.png)
 
 ### 3.2 选择Scrum softwoar development
-
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-14.png)
 
+### 3.2 选择Scrum softwoar development
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-15.png)
 
+### 3.2 选择Scrum softwoar development
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-16.png)
 
+### 3.2 选择Scrum softwoar development
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-17.png)
 
+### 3.2 选择Scrum softwoar development
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-18.png)
 
 
