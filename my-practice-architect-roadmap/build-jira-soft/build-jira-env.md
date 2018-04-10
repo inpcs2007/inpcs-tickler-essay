@@ -106,7 +106,11 @@ http://localhost:20012
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-11.png)
 
-Create a new project
+## 4. 创建一个新的工程
+
+
+### 3.1 Create a new project
+
 
 ### 2.1 dockerFile位置
 
