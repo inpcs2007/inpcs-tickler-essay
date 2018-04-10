@@ -1,13 +1,15 @@
 # Docker创建JIRA 7.2.7中文破解版
 
 ## 1. 介绍
-  JIRA是Atlassian公司出品的项目与事务跟踪工具，被广泛应用于缺陷跟踪、客户服务、需求收集、流程审批、任务跟踪、项目跟踪和敏捷管理等工作领域。
-  JIRA中配置灵活、功能全面、部署简单、扩展丰富，其超过150项特性得到了全球115个国家超过19,000家客户的认可。
-  官网地址https://www.atlassian.com/
+
+JIRA是Atlassian公司出品的项目与事务跟踪工具，被广泛应用于缺陷跟踪、客户服务、需求收集、流程审批、任务跟踪、项目跟踪和敏捷管理等工作领域。  
+  JIRA中配置灵活、功能全面、部署简单、扩展丰富，其超过150项特性得到了全球115个国家超过19,000家客户的认可。  
+  官网地址[https://www.atlassian.com/](https://www.atlassian.com/)
 
 ## 2. 安装docker版本的Jira7.2.7破解版
 
 ### 2.1 创建MySQL 5.6的容器
+
 ```
 sudo docker run -d \
     --name=mysql-db \
@@ -19,7 +21,9 @@ sudo docker run -d \
     -e MYSQL_PASSWORD=jira \
     idoall/mysql:5.6
 ```
+
 ### 2.1 创建JIRA 7.2.7容器
+
 ```
 sudo docker run -d \
     --name jira \
@@ -32,28 +36,22 @@ sudo docker run -d \
     -p 20015:22 \
     idoall/ubuntu16.04-jira:7.2.7
 ```
+
 ## 3. 配置JIRA
+
 ### 3.1 进入Jira首页
+
 ```
 http://localhost:20012
 ```
+
 ### 3.2 选择JIRA的安装选项
+
 选择 I‘ll set it up mysqlf
 
-
-
-
-
-
-
-
-
-
-
-
-
+![](/my-practice-architect-roadmap/build-jira-soft/jira-01.png)
 
 ### 2.1 dockerFile位置
-  github地址为 https://github.com/idoall/docker/blob/master/_del_jira/README.md.bak
 
+github地址为 [https://github.com/idoall/docker/blob/master/\_del\_jira/README.md.bak](https://github.com/idoall/docker/blob/master/_del_jira/README.md.bak)
 
