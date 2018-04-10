@@ -76,13 +76,15 @@ http://localhost:20012
 
 ### 3.4 Specify your license key
 
-点击generate a JIRA trial license，上网申请个临时30天的许可证。
+在申请New Evaluation License的时候，选择如下，然后点击Generate License，会申请个临时30天的许可证
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-06.png)
 
-在申请New Evaluation License的时候，选择如下，然后点击Generate License：
+申请完毕后点击【Yes】，将会迁移到本地安装的Jira页面中
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-07.png)
+
+
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-08.png)
 
