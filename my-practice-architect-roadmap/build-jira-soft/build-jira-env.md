@@ -89,11 +89,16 @@ http://localhost:20012
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-08.png)
 
 ### 3.5 Set up administrator account
+
 输入你的全称：root、邮件：xxx@xxx.com、用户名：root、密码：123456，点击Next
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-9.png)
 
 > 如果出现错误，重新执行4.1
+
+
+
+![](/my-practice-architect-roadmap/build-jira-soft/jira-10.png)
 
 ### 2.1 dockerFile位置
 
