@@ -108,10 +108,10 @@ http://localhost:20012
 
 ## 4. 创建一个新的工程
 
-### 3.1 Create a new project
-
+### 3.1 选择Create project
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-13.png)
 
+### 3.1 选择Create project
 
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-14.png)
