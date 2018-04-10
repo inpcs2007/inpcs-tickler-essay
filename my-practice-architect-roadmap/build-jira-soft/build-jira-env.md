@@ -89,7 +89,6 @@ http://localhost:20012
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-08.png)
 
 ### 3.5 Set up administrator account
-
 输入你的全称：root、邮件：xxx@xxx.com、用户名：root、密码：123456，点击Next
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-9.png)
@@ -97,6 +96,8 @@ http://localhost:20012
 > 如果出现错误，重新执行4.1
 
 
+### 3.6 Set up email notifications
+稍后对邮件服务器进行配置
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-10.png)
 
