@@ -57,10 +57,13 @@ http://localhost:20012
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-02.png)
 
-然后执行Test Connection，
+然后执行Test Connection
+
+![](/my-practice-architect-roadmap/build-jira-soft/jira-03.png)
 
 
-测试数据库连接上后，点击Next，开始在数据库创建jira需要的表
+
+测试数据库连接上后，点击Next，开始在数据库创建jira需要的表。
 
 ### 2.1 dockerFile位置
 
