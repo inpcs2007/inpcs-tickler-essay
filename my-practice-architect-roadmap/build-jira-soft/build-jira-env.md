@@ -66,17 +66,23 @@ http://localhost:20012
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-04.png)
 
 ### 3.3 Set up application properties
+
 输入你的Application Title，选择Mode，输入Base URL，点击Next
 
-> Application Title 建议不要输入中文，我这里测试出错
-Mode中，我们在此使用的是Private模式，在这个模式下，用户的创建需要由管理员创建。而在Public模式下，用户是可以自己进行注册
+> Application Title 建议不要输入中文，我这里测试出错  
+> Mode中，我们在此使用的是Private模式，在这个模式下，用户的创建需要由管理员创建。而在Public模式下，用户是可以自己进行注册
+
+![](/my-practice-architect-roadmap/build-jira-soft/jira-05.png)
 
 ### 3.4 Specify your license key
+
+
+
+
 
 点击generate a JIRA trial license，上网申请个临时30天的许可证。
 
 在申请New Evaluation License的时候，选择如下，然后点击Generate License：
-
 
 ### 2.1 dockerFile位置
 
