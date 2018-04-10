@@ -47,23 +47,21 @@ http://localhost:20012
 
 ### 3.2 选择JIRA的安装选项
 
-选择 I‘ll set it up mysqlf
+> 选择 I‘ll set it up mysqlf
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-01.png)
 
 ### 3.2 选择数据库的安装选项
 
-选择 My Own Database选项，并填写如下信息内容
+> 选择 My Own Database选项，并填写如下信息内容
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-02.png)
 
-然后执行Test Connection
+> 然后执行Test Connection
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-03.png)
 
-
-
-测试数据库连接上后，点击Next，开始在数据库创建jira需要的表。
+> 测试数据库连接上后，点击Next，开始在数据库创建jira需要的表。
 
 ### 2.1 dockerFile位置
 
