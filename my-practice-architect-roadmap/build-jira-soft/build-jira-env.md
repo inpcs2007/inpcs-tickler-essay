@@ -65,6 +65,15 @@ http://localhost:20012
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-04.png)
 
+### 3.3 Set up application properties
+输入你的Application Title，选择Mode，输入Base URL，点击Next
+
+> Application Title 建议不要输入中文，我这里测试出错
+Mode中，我们在此使用的是Private模式，在这个模式下，用户的创建需要由管理员创建。而在Public模式下，用户是可以自己进行注册
+
+
+
+
 ### 2.1 dockerFile位置
 
 github地址为 [https://github.com/idoall/docker/blob/master/\_del\_jira/README.md.bak](https://github.com/idoall/docker/blob/master/_del_jira/README.md.bak)
