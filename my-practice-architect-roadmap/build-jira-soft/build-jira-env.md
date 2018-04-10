@@ -57,6 +57,8 @@ http://localhost:20012
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-02.png)
 
+
+
 ### 2.1 dockerFile位置
 
 github地址为 [https://github.com/idoall/docker/blob/master/\_del\_jira/README.md.bak](https://github.com/idoall/docker/blob/master/_del_jira/README.md.bak)
