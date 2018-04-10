@@ -114,16 +114,16 @@ http://localhost:20012
 ### 3.2 选择Scrum softwoar development
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-14.png)
 
-### 3.2 选择Scrum softwoar development
+### 3.3 选择Scrum softwoar development
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-15.png)
 
-### 3.2 选择Scrum softwoar development
+### 3.4 选择Scrum softwoar development
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-16.png)
 
-### 3.2 选择Scrum softwoar development
+### 3.5 选择Scrum softwoar development
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-17.png)
 
-### 3.2 选择Scrum softwoar development
+### 3.6 选择Scrum softwoar development
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-18.png)
 
 
