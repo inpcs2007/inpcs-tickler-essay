@@ -132,15 +132,27 @@ http://localhost:20012
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-18.png)
 
-
-
 ## 5. 中文汉化
 
 ### 4.1 汉化补丁下载
+
 ```
 链接：https://pan.baidu.com/s/1ihKUrPHpBgxp9sRYlidXMA 密码：50bg
 文件为：JIRACore-7.2.3-language-pack-zh_CN
 ```
+
+![](/my-practice-architect-roadmap/build-jira-soft/jira-19.png)
+
+### ![](/my-practice-architect-roadmap/build-jira-soft/jira-20.png)
+
+### ![](/my-practice-architect-roadmap/build-jira-soft/jira-21.png)![](/my-practice-architect-roadmap/build-jira-soft/jira-22.png)
+
+![](/my-practice-architect-roadmap/build-jira-soft/jira-23.png)![](/my-practice-architect-roadmap/build-jira-soft/jira-24.png)
+
+![](/my-practice-architect-roadmap/build-jira-soft/jira-25.png)
+
+
+
 
 
 ### 2.1 dockerFile位置
