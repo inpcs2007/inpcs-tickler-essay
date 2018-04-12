@@ -112,21 +112,13 @@ http://localhost:20012
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-13.png)
 
-### 4.2 选择Scrum softwoar development
+### 4.2 选择Scrum softwoar development![](/my-practice-architect-roadmap/build-jira-soft/jira-14.png)
 
-![](/my-practice-architect-roadmap/build-jira-soft/jira-14.png)
+### 4.3 选择Select![](/my-practice-architect-roadmap/build-jira-soft/jira-15.png)
 
-### 4.3 选择Select
+### 4.4 填写name为test![](/my-practice-architect-roadmap/build-jira-soft/jira-16.png)
 
-![](/my-practice-architect-roadmap/build-jira-soft/jira-15.png)
-
-### 4.4 填写name为test
-
-![](/my-practice-architect-roadmap/build-jira-soft/jira-16.png)
-
-### 4.5 点击submit
-
-![](/my-practice-architect-roadmap/build-jira-soft/jira-17.png)
+### 4.5 点击submit![](/my-practice-architect-roadmap/build-jira-soft/jira-17.png)
 
 ### 4.6 迁移到新建工程Test
 
