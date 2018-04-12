@@ -151,12 +151,27 @@ http://localhost:20012
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-22.png)
 
-### 4.2 添加汉化补丁到Jira中
+> 配置选项
+
+将“Indexing language“选择为Chinese，将“Default language“选择为中文(中国)
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-23.png)
-### 4.2 添加汉化补丁到Jira中
+
+> 保存设置
+
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-24.png)
-### 4.2 添加汉化补丁到Jira中
+
+> 完成汉化
+
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-25.png)
+
+
+
+
+
+
+
+
+
 
 ### 2.1 dockerFile位置
 
