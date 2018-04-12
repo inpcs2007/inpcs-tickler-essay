@@ -147,7 +147,7 @@ http://localhost:20012
 
 ### ![](/my-practice-architect-roadmap/build-jira-soft/jira-21.png)![](/my-practice-architect-roadmap/build-jira-soft/jira-22.png)
 
-![](/my-practice-architect-roadmap/build-jira-soft/jira-23.png)![](/my-practice-architect-roadmap/build-jira-soft/jira-24.png)
+![](/my-practice-architect-roadmap/build-jira-soft/jira-23.png)![](/my-practice-architect-roadmap/build-jira-soft/jira-24.png)ssssss
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-25.png)
 
