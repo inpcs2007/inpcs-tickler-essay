@@ -139,6 +139,7 @@ http://localhost:20012
 ### 4.1 汉化补丁下载
 ```
 链接：https://pan.baidu.com/s/1ihKUrPHpBgxp9sRYlidXMA 密码：50bg
+文件为：JIRACore-7.2.3-language-pack-zh_CN
 ```
 
 
