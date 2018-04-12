@@ -133,9 +133,7 @@ http://localhost:20012
 文件为：JIRACore-7.2.3-language-pack-zh_CN
 ```
 
-4.2 添加
-
-![](/my-practice-architect-roadmap/build-jira-soft/jira-19.png)
+4.2 添加![](/my-practice-architect-roadmap/build-jira-soft/jira-19.png)
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-20.png)
 
