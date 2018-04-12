@@ -133,18 +133,29 @@ http://localhost:20012
 文件为：JIRACore-7.2.3-language-pack-zh_CN
 ```
 
-4.2 添加![](/my-practice-architect-roadmap/build-jira-soft/jira-19.png)
+### 4.2 添加汉化补丁到Jira中
+> 选择“Manage add-ons”，点击“Upload add-on”
+
+![](/my-practice-architect-roadmap/build-jira-soft/jira-19.png)
+
+> 上传补丁
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-20.png)
 
+### 4.3 配置中文汉化选项
+> 选择“system”
+
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-21.png)
+
+> 点击“Edit Settings”
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-22.png)
 
+### 4.2 添加汉化补丁到Jira中
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-23.png)
-
+### 4.2 添加汉化补丁到Jira中
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-24.png)
-
+### 4.2 添加汉化补丁到Jira中
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-25.png)
 
 ### 2.1 dockerFile位置
