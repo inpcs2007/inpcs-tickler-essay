@@ -141,7 +141,7 @@ http://localhost:20012
 文件为：JIRACore-7.2.3-language-pack-zh_CN
 ```
 
-![](/my-practice-architect-roadmap/build-jira-soft/jira-19.png)
+4.2 添![](/my-practice-architect-roadmap/build-jira-soft/jira-19.png)
 
 ### ![](/my-practice-architect-roadmap/build-jira-soft/jira-20.png)
 
@@ -150,10 +150,6 @@ http://localhost:20012
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-23.png)![](/my-practice-architect-roadmap/build-jira-soft/jira-24.png)
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-25.png)
-
-
-
-
 
 ### 2.1 dockerFile位置
 
