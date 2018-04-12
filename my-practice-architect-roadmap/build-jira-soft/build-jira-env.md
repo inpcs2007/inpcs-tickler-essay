@@ -108,29 +108,39 @@ http://localhost:20012
 
 ## 4. 创建一个新的工程
 
-### 3.1 选择Create project
+### 4.1 选择Create project
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-13.png)
 
-### 3.2 选择Scrum softwoar development
+### 4.2 选择Scrum softwoar development
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-14.png)
 
-### 3.3 选择Select
+### 4.3 选择Select
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-15.png)
 
-### 3.4 填写name为test
+### 4.4 填写name为test
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-16.png)
 
-### 3.5 点击submit
+### 4.5 点击submit
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-17.png)
 
-### 3.6 迁移到新建工程Test
+### 4.6 迁移到新建工程Test
 
 ![](/my-practice-architect-roadmap/build-jira-soft/jira-18.png)
+
+
+
+## 5. 中文汉化
+
+### 4.1 汉化补丁下载
+```
+链接：https://pan.baidu.com/s/1ihKUrPHpBgxp9sRYlidXMA 密码：50bg
+```
+
 
 ### 2.1 dockerFile位置
 
