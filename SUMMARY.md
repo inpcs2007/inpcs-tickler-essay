@@ -11,6 +11,7 @@
   * [构建机器学习基础环境](my-machine-learning-practice/build-base-env/bulid-machine-learning-env.md)
 * [5.我的实践之容器实践](6.my-docker-architect.md)
   * [构建容器基础环境](my-docker-practice/build-base-env/build-docker-env.md)
+    * [构建Remot Api环境](my-docker-practice/build-base-env/remot-api-setup.md)
   * [构建容器常用软件环境](my-docker-practice/build-base-soft/build-base-soft.md)
     * [构建容器之ES环境](my-docker-practice/build-base-soft/build-es-soft.md)
     * [构建容器之MySQL环境](my-docker-practice/build-base-soft/build-mysql-soft.md)
