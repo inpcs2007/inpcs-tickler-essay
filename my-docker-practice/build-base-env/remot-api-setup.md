@@ -27,7 +27,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-#### _测试_
+#### _命令测试_
 
 ```
 inpcs@inpcshome:~$ sudo docker -H localhost:5678 version
@@ -53,4 +53,12 @@ Server:
 ```
 
 ![](/my-docker-practice/build-base-env/static/remotApi.png)
+
+#### _页面测试_
+inpcs@inpcshome:~$ curl http://localhost:5678/version
+
+```
+{"Platform":{"Name":""},"Components":[{"Name":"Engine","Version":"18.03.0-ce","Details":{"ApiVersion":"1.37","Arch":"amd64","BuildTime":"2018-03-21T23:10:17.000000000+00:00","Experimental":"false","GitCommit":"0520e24","GoVersion":"go1.9.4","KernelVersion":"4.14.0-deepin2-amd64","MinAPIVersion":"1.12","Os":"linux"}}],"Version":"18.03.0-ce","ApiVersion":"1.37","MinAPIVersion":"1.12","GitCommit":"0520e24","GoVersion":"go1.9.4","Os":"linux","Arch":"amd64","KernelVersion":"4.14.0-deepin2-amd64","BuildTime":"2018-03-21T23:10:17.000000000+00:00"}
+
+```
 
