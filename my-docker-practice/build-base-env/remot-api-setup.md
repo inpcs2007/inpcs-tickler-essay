@@ -1,57 +1,54 @@
 # 构建Romot Api环境
 
-在Ubuntu14.04为基础系统环境构建docker-ce的基础环境，根据具体步骤构建出本文。
+### _前言_
+
+ 本文记录docker怎么打开api remote接口设置，docker的版本更新太快了，不同的版本之间，设置可能不同，本文是针对docker13.1
 
 ### _Ubuntu14.04下构建docker-ce环境_
 
-#### 移除原有的docker
+#### 查看配置文件位于哪里
 
 ```
-sudo apt-get remove docker docker-engine docker.io
+systemctl show --property=FragmentPath docker 
 ```
 
-#### _安装docker-ce前的准备_
-
-> 1. 更新系统补丁，安装必备支撑软件
+#### _编辑配置文件内容，接收所有ip请求_
 
 ```
-sudo apt-get update  
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+vim  /lib/systemd/system/docker.service 
+ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:5678
 ```
 
-> 1. 添加官方PGP秘钥
+#### _重新加载配置文件，重启docker daemon_
 
 ```
-curl -fsSL [https://download.docker.com/linux/ubuntu/gpg](https://download.docker.com/linux/ubuntu/gpg) \| sudo apt-key add -
+sudo systemctl daemon-reload 
+sudo systemctl restart docker
 ```
 
-> 1. 添加apt源
+#### _测试_
+
 
 ```
-sudo add-apt-repository "deb [arch=amd64] [https://download.docker.com/linux/ubuntu](https://download.docker.com/linux/ubuntu) $(lsb_release -cs) stable"
+inpcs@inpcshome:~$ sudo docker -H localhost:5678 version
+Client:
+ Version:	18.03.0-ce
+ API version:	1.37
+ Go version:	go1.9.4
+ Git commit:	0520e24
+ Built:	Wed Mar 21 23:11:46 2018
+ OS/Arch:	linux/amd64
+ Experimental:	false
+ Orchestrator:	swarm
+
+Server:
+ Engine:
+  Version:	18.03.0-ce
+  API version:	1.37 (minimum version 1.12)
+  Go version:	go1.9.4
+  Git commit:	0520e24
+  Built:	Wed Mar 21 23:10:17 2018
+  OS/Arch:	linux/amd64
+  Experimental:	false
+
 ```
-
-#### _安装docker-ce_
-
-```
-sudo apt-get update  
-sudo apt-get install docker-ce
-```
-
-#### _升级docker-ce_
-
-```
-sudo apt-get upgrade docker-engine
-```
-
-### 易用性配置
-
-> 使用docker时取消sudo命令
-
-```
-sudo gpasswd -a username docker  
-sudo service docker restart
-```
-
-
-
