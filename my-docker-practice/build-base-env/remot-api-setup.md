@@ -18,8 +18,7 @@ systemctl show --property=FragmentPath docker
 vim  /lib/systemd/system/docker.service 
 ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:5678
 ```
-
-#### ![](/my-docker-practice/build-base-env/static/remotApi测试.png)
+![](/my-docker-practice/build-base-env/static/remotApi测试.png)
 
 #### _重新加载配置文件，重启docker daemon_
 
