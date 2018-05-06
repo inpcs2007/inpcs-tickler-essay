@@ -114,7 +114,7 @@ incps@incpshome:~/jupyterhome$ jupyter notebook
 
 4.4 安装决策树可视化工具Graphviz
 
-https://graphviz.gitlab.io/download
+[https://graphviz.gitlab.io/download](https://graphviz.gitlab.io/download)
 
 在py36的虚拟环境中安装pip install graphviz
 
@@ -143,8 +143,18 @@ export_graphviz(dtree,out_file=dot_data,
                 special_characters=True)
 graph=pydotplus.graph_from_dot_data(dot_data.getvalue())
 Image(graph.create_png())
-
 ```
 
 执行后的结果如下图：![](/my-machine-learning-practice/build-base-env/Graphviz-demo.png)
+
+```
+pip install --ignor_installed --upgrade tensorflow
+pip install ipykernel
+python -m ipykernel install --user --name tensorflow
+
+
+
+```
+
+
 
