@@ -69,8 +69,6 @@ source deactivate py36
 使用jupyter kernelspec list查看安装的内核和位置
 
 python -m ipykernel install --user --name py36
-
-
 ```
 
 > 安装 ipykernel 内核
@@ -108,15 +106,45 @@ python -m ipykernel install --user
 Installed kernelspec python2 in /home/incps/.local/share/jupyter/kernels/python2
 ```
 
-### 
-
-### 
-
 ### 4.3 运行 jupyter notebook
 
 ```
 incps@incpshome:~/jupyterhome$ jupyter notebook
 ```
 
+4.4 安装决策树可视化工具Graphviz
 
+https://graphviz.gitlab.io/download
+
+在py36的虚拟环境中安装pip install graphviz
+
+Graphviz样例
+
+```
+import graphviz
+
+import sklearn.datasets as datasets
+import pandas as pd
+iris = datasets.load_iris()
+df=pd.DataFrame(iris.data, columns=iris.feature_names)
+y=iris.target
+
+from sklearn.tree import DecisionTreeClassifier
+dtree=DecisionTreeClassifier()
+dtree.fit(df,y)
+
+from sklearn.externals.six import StringIO
+from IPython.display import Image
+from sklearn.tree import export_graphviz
+import pydotplus
+dot_data=StringIO()
+export_graphviz(dtree,out_file=dot_data,
+                filled=True, rounded=True,
+                special_characters=True)
+graph=pydotplus.graph_from_dot_data(dot_data.getvalue())
+Image(graph.create_png())
+
+```
+
+执行后的结果如下图：![](/my-machine-learning-practice/build-base-env/Graphviz-demo.png)
 
