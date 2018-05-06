@@ -83,6 +83,16 @@ pip install ipython-5.4.1-py2-none-any.whl
 pip install ipykernel
 ```
 
+##### 安装ipykernel到user
+```
+python -m ipykernel install --user
+```
+成功提示信息
+```
+Installed kernelspec python2 in /home/incps/.local/share/jupyter/kernels/python2
+
+```
+
 ### 
 
 ### 
