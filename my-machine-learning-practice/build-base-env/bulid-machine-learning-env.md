@@ -42,7 +42,22 @@ https://www.anaconda.com/download/
 
 ### 4.2 安装anaconda
 
+在linux下的命令行安装anaconda的时候，注意要选择添加环境变量，要不然无法在命令行中使用conda命令，参见下图
 
+![](/my-machine-learning-practice/build-base-env/anaconda-steup.png)
+
+#### 4.2.1使用conda创建jupyter notebook的 虚拟环境核心
+
+> 创建虚拟环境
+
+```
+# 创建虚拟环境
+conda create -n mypy27 python=2.7
+# 开启虚拟环境
+source activate mypy27
+# 关闭虚拟环境
+source deactivate mypy27
+```
 
 ```
 IPython 6.0+ does not support Python 2.6, 2.7, 3.0, 3.1, or 3.2.     
@@ -50,13 +65,10 @@ When using Python 2.7, please install IPython 5.x LTS Long Term Support version.
 python2.7 ipython Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-Vxrpi9/ipython/
 ```
 
-
-
 ```
 pip install ipython-5.4.1-py2-none-any.whl
 
 pip install ipykernel
-
 ```
 
 ### 
@@ -68,8 +80,6 @@ pip install ipykernel
 ```
 incps@incpshome:~/jupyterhome$ jupyter notebook
 ```
-
-
 
 
 
