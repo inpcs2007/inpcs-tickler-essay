@@ -72,7 +72,7 @@ pip install ipykernel
    When using Python 2.7, please install IPython 5.x LTS Long Term Support version.
    python2.7 ipython Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-Vxrpi9/ipython/
 ```
- * 解决方案
+* 解决方案
 ```
 # 下载ipython5.4
 wget https://pypi.python.org/packages/f7/48/5702699caf20208d61a92157c01d1eb281093e3e02e9bcd4b5031ccea6a1/ipython-5.4.1-py2-none-any.whl#md5=2b801f50b5e82a3fabca42b661568bf5
