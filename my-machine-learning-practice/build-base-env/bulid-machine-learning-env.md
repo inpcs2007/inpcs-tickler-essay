@@ -44,5 +44,32 @@ https://www.anaconda.com/download/
 
 
 
+```
+IPython 6.0+ does not support Python 2.6, 2.7, 3.0, 3.1, or 3.2.     
+When using Python 2.7, please install IPython 5.x LTS Long Term Support version.
+python2.7 ipython Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-Vxrpi9/ipython/
+```
+
+
+
+```
+pip install ipython-5.4.1-py2-none-any.whl
+
+pip install ipykernel
+
+```
+
+### 
+
+### 
+
+### 4.3 运行 jupyter notebook
+
+```
+incps@incpshome:~/jupyterhome$ jupyter notebook
+```
+
+
+
 
 
