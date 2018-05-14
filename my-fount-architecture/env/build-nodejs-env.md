@@ -76,3 +76,7 @@ npm config get registry
 > 2. npm WARN saveError ENOENT: no such file or directory, open '/home/incps/package.json'
 
 项目目录下没有package.json这个文件。可以使用npm init -f命令生成一下，至于生成的package.json中缺少的字段你可以参照其他的模块的package.json文件填进去。至于package.json中的每个字段的值可以为“”。至于依赖项字段，以安装模块的时候使用-save参数就会自动写到文件中。
+
+```
+npm init -f
+```
