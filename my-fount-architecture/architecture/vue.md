@@ -56,5 +56,31 @@
                 └── HelloWorld.spec.js
 ```
 ###
+1.去掉[http://localhost:8080/#/]中的【#】
+路由是/#/login这个样子的，这里你的项目可以继续保持这样，但不喜欢也可以改变它。这里我们改变路由router的模式，由默认的hash变为history。
 
-###
+```
+Vue.use(Router)
+
+export default new Router({
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    },
+    {
+      path: '/login',
+      name: Login,
+      component: Login
+    }
+  ]
+})
+```
+
+错误信息：
+element-ui/lib/theme-default/index.css in ./src/main.js
+解决方式：
+element-ui/lib/theme-chalk/index.css
+原因：是找不到包
