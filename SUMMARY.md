@@ -5,7 +5,7 @@
   * [构建大数据平台环境](my-hadoop-practice/build-hadoop-env.md)
 * [2.我的实践之互联网架构实践](2.my-internet-practice.md)
   * [互联网架构涵盖哪些领域](my-internet-practice/what-internet-architecture.md)
-* [3.我的实践之路前端全栈架构实践](my-internet-practice/fount-architecture/fount-architecture.md)
+* [3.我的实践之路前端全栈架构实践](my-fount-architecture.md)
   * [前端全栈架构实践](my-internet-practice/fount-architecture/fount-architecture.md)
 * [4.我的实践之微服务架构实践](3.my-micro-service-practice.md)
   * [构建微服务基础环境](my-micor-service-practice/build-base-env/build-micro-service-env.md)
