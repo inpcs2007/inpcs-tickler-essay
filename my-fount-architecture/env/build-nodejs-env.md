@@ -8,3 +8,8 @@
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 ```
 
+> 查看 bashrc环境
+
+```
+cat ~/.bashrc|grep nvm
+```
