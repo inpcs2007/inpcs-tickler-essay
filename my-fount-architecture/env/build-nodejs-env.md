@@ -50,7 +50,7 @@ npm config get registry
 
 ### 注意事项 
 
-> npm warn package.json @1.0.0 no repository field.
+> 1. npm warn package.json @1.0.0 no repository field.
 
 看字面意思大概是package.json里缺少repository字段，也就是说缺少项目的仓库字段
 ```
@@ -73,4 +73,6 @@ npm config get registry
 ```
 以这种方式把项目声明为私有。
 
-> 
+> 2. npm WARN saveError ENOENT: no such file or directory, open '/home/incps/package.json'
+
+项目目录下没有package.json这个文件。可以使用npm init -f命令生成一下，至于生成的package.json中缺少的字段你可以参照其他的模块的package.json文件填进去。至于package.json中的每个字段的值可以为“”。至于依赖项字段，以安装模块的时候使用-save参数就会自动写到文件中。
