@@ -33,4 +33,5 @@
   * [谷歌的大规模分布式跟踪系统](my-important-documents/dapper-translation.md)
   * [lantern的安装](my-important-documents/lanternde-an-zhuang.md)
 * [8.重要资料](8.my-important-infodata.md)
+* [7.我的实践之大前端之路](7wo-de-shi-jian-zhi-da-qian-duan-zhi-lu.md)
 
