@@ -29,9 +29,9 @@
   * [jira学习笔记](my-practice-architect-roadmap/build-jira-soft/jira-info.md)
     * [构建基础环境之jira环境](my-practice-architect-roadmap/build-jira-soft/build-jira-env.md)
   * [怎样介绍系统架构](my-practice-architect-roadmap/introduce-system-architecture.md)
-* [7.重要文献](7.my-important-documents.md)
+* [8.重要文献](7.my-important-documents.md)
   * [谷歌的大规模分布式跟踪系统](my-important-documents/dapper-translation.md)
   * [lantern的安装](my-important-documents/lanternde-an-zhuang.md)
-* [8.重要资料](8.my-important-infodata.md)
+* [9.重要资料](8.my-important-infodata.md)
 * [7.我的实践之大前端之路](7wo-de-shi-jian-zhi-da-qian-duan-zhi-lu.md)
 
