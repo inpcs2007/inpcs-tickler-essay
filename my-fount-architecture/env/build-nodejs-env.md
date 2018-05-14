@@ -43,9 +43,15 @@ Now using node v8.11.1 (npm v5.6.0)
 npm config set registry https://registry.npm.taobao.org
 ```
 
+验证镜像仓库命令
+```
+npm config get registry
+```
+
 ### 注意事项 
 
 > npm warn package.json @1.0.0 no repository field.
+
 看字面意思大概是package.json里缺少repository字段，也就是说缺少项目的仓库字段
 ```
 {
