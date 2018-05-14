@@ -1,8 +1,6 @@
 # 构建nodejs基础环境
 
-
 ### 安装nvm管理nodejs的版本
-
 
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
@@ -21,15 +19,19 @@ source ~/.bashrc
 ```
 
 > 查看　nvm　版本
-```
-nvm --version
-```
-### 安装nodejs 8.11.1
+>
+> ```
+> nvm --version
+> ```
+>
+> ### 安装nodejs 8.11.1
 
 ```
 nvm install 8.11.1
 ```
+
 执行后如下显示
+
 ```
 Downloading https://nodejs.org/dist/v8.11.1/node-v8.11.1-linux-x64.tar.xz...
 ######################################################################## 100.0%
@@ -44,15 +46,17 @@ npm config set registry https://registry.npm.taobao.org
 ```
 
 验证镜像仓库命令
+
 ```
 npm config get registry
 ```
 
-### 注意事项 
+### 注意事项
 
 > 1. npm warn package.json @1.0.0 no repository field.
 
 看字面意思大概是package.json里缺少repository字段，也就是说缺少项目的仓库字段
+
 ```
 {
     ...
@@ -63,7 +67,9 @@ npm config get registry
     ...
 }
 ```
+
 但作为测试项目或者练习用，只需在package.json里面做如下配置即可:
+
 ```
 {
     ...
@@ -71,6 +77,7 @@ npm config get registry
     ...
 }
 ```
+
 以这种方式把项目声明为私有。
 
 > 2. npm WARN saveError ENOENT: no such file or directory, open '/home/incps/package.json'
@@ -80,3 +87,6 @@ npm config get registry
 ```
 npm init -f
 ```
+
+
+
