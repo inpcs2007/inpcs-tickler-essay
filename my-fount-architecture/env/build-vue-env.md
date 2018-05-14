@@ -99,5 +99,21 @@ npm install sass-loader node-sass  --save-dev
 
     Documentation can be found at https://vuejs-templates.github.io/webpack
 
+#### 遇到的问题：
+> 1. this dependency was not found
+
+```
+this dependency was not found:
+
+* !!vue-style-loader!css-loader?{"minimize":false,"sourceMap":false}!../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-1d57e5ea","scoped":false,"hasInlineConfig":false}!stylus-loader?{"sourceMap":false}!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./a.vue in ./src/components/a.vue
+
+To install it, you can run: npm install --save !!vue-style-loader!css-loader?{"minimize":false,"sourceMap":false}!../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-1d57e5ea","scoped":false,"hasInlineConfig":false}!stylus-loader?{"sourceMap":false}!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./a.vue
+```
+
+解决方式：
+```
+npm install sass-loader node-sass  --save-dev
+
+```
 开始第一个vue之旅吧！
 
