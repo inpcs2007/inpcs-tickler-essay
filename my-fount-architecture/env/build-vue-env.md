@@ -12,12 +12,18 @@ npm install --global vue-cli
 
 > 安装vue环境
 >
+> ```
 >
->
+> ```
+
+```
+
+```
+
 > ```
 > npm install element-ui --save
 > ```
-
+>
 > 安装sass解析器
 
 ```
