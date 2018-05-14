@@ -6,7 +6,7 @@
 * [2.我的实践之互联网架构实践](2.my-internet-practice.md)
   * [互联网架构涵盖哪些领域](my-internet-practice/what-internet-architecture.md)
 * [3.我的实践之路前端全栈架构实践](my-fount-architecture.md)
-  * [前端全栈架构实践](my-fount-architecture/env/build-nodejs-env.md)
+  * [构建nodejs基础环境](my-fount-architecture/env/build-nodejs-env.md)
 * [4.我的实践之微服务架构实践](3.my-micro-service-practice.md)
   * [构建微服务基础环境](my-micor-service-practice/build-base-env/build-micro-service-env.md)
   * [微服务之SpringCloud实践](my-micor-service-practice/spring-cloud/spirng-cloud.md)
