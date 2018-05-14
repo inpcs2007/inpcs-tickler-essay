@@ -13,3 +13,9 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | b
 ```
 cat ~/.bashrc|grep nvm
 ```
+
+> 执行 bashrc环境可用
+
+```
+source ~/.bashrc
+```
