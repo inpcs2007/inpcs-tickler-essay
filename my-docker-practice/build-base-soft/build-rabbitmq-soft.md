@@ -13,9 +13,6 @@ docker pull rabbitmq:3.7.5
 
 默认使用的RabbitMQ最新的新镜像。
 
-  
-
-
 目前最新的是3.7.5，通过查看他的
 
 [rabbitmq/3.6/debian/Dockerfile](https://github.com/docker-library/rabbitmq/blob/28001b529f28ed0d8e8297f8b603a4cc93a846a3/3.6/debian/Dockerfile)
@@ -56,4 +53,22 @@ docker run -d --name rabbitmq -p 5671:5671 -p 5672:5672 -p 4369:4369 -p 25672:25
 所以，容器使用的所有端口就明确了。
 
 成功创建容器后，就可以访问web 管理端了[http://127.0.0.1:15672](http://127.0.0.1:15672/)，默认创建了一个 guest 用户，密码也是 guest。
+
+
+
+# 创建镜像（用户名和密码） {#创建镜像}
+
+创建容器使用如下命令：
+
+```
+docker run -d --hostname rabbit --name rabbit -e RABBITMQ_DEFAULT_USER=rabbitadmin -e RABBITMQ_DEFAULT_PASS=rabbitpwd -p 15672:15672 rabbitmq:management
+```
+
+
+
+
+
+
+
+
 
