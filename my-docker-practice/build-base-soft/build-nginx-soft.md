@@ -10,7 +10,7 @@ docker pull nginx
 ```
 docker run -p 8999:80 --name mynginx -v $PWD/www:/www -v $PWD/conf/conf.d:/etc/nginx/conf.d -v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf -v $PWD/logs:/wwwlogs -d nginx
 ```
-* 将
+
 ### 2.2 宿主机操作容器
  docker cp 容器名：要拷贝的文件在容器里面的路径       要拷贝到宿主机的相应路径
 ```
