@@ -54,8 +54,6 @@ docker run -d --name rabbitmq -p 5671:5671 -p 5672:5672 -p 4369:4369 -p 25672:25
 
 成功创建容器后，就可以访问web 管理端了[http://127.0.0.1:15672](http://127.0.0.1:15672/)，默认创建了一个 guest 用户，密码也是 guest。
 
-
-
 # 创建镜像（用户名和密码） {#创建镜像}
 
 创建容器使用如下命令：
@@ -63,12 +61,6 @@ docker run -d --name rabbitmq -p 5671:5671 -p 5672:5672 -p 4369:4369 -p 25672:25
 ```
 docker run -d --hostname rabbit --name rabbit -e RABBITMQ_DEFAULT_USER=rabbitadmin -e RABBITMQ_DEFAULT_PASS=rabbitpwd -p 15672:15672 rabbitmq:management
 ```
-
-
-
-
-
-
 
 
 
