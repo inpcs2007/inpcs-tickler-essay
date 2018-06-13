@@ -12,13 +12,9 @@ java -jar microservice-discovery-eureka-ha-0.0.1-SNAPSHOT.jar  --spring.profiles
 
 当Ribbon和Eureka配合使用的时候，会自动讲虚拟主机名称映射成微服务的网络地址
 
+> ### _**重要文献**_
 
-
-重要文献
-
-* 跨域访问支持（Spring Boot、Nginx、浏览器）http://itmuch.com/work/cors/
-
-
+* 跨域访问支持（Spring Boot、Nginx、浏览器）[http://itmuch.com/work/cors/](http://itmuch.com/work/cors/)
 
 # SpringCloud进阶教程
 
