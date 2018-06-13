@@ -16,13 +16,13 @@ java -jar microservice-discovery-eureka-ha-0.0.1-SNAPSHOT.jar  --spring.profiles
 
 > _**1.注册中心Eureka**_
 
-1.1 Spring Cloud之一 Eureka简介及原理　[http://itmuch.com/spring-cloud-1/](http://itmuch.com/spring-cloud-1/)
+  1.1 Spring Cloud之一 Eureka简介及原理　[http://itmuch.com/spring-cloud-1/](http://itmuch.com/spring-cloud-1/)
 
-1. Spring Cloud之二 创建一个Eureka Server [http://itmuch.com/spring-cloud-2/](http://itmuch.com/spring-cloud-2/)
+  1.2 Spring Cloud之二 创建一个Eureka Server [http://itmuch.com/spring-cloud-2/](http://itmuch.com/spring-cloud-2/)
 
-2. Spring Cloud之三 创建一个Eureka Server集群　[http://www.cnblogs.com/ityouknow/p/6854805.html](http://www.cnblogs.com/ityouknow/p/6854805.html)
+  1.3 Spring Cloud之三 创建一个Eureka Server集群　[http://www.cnblogs.com/ityouknow/p/6854805.html](http://www.cnblogs.com/ityouknow/p/6854805.html)
 
-3. Spring Cloud之四 创建一个Eureka Server集群[http://itmuch.com/spring-cloud-sum-eureka/](http://itmuch.com/spring-cloud-sum-eureka/)
+  1.4 Spring Cloud之四 创建一个Eureka Server集群[http://itmuch.com/spring-cloud-sum-eureka/](http://itmuch.com/spring-cloud-sum-eureka/)
 
 
 
