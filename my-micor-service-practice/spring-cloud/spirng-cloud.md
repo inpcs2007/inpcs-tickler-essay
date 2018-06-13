@@ -12,3 +12,9 @@ java -jar microservice-discovery-eureka-ha-0.0.1-SNAPSHOT.jar  --spring.profiles
 
 当Ribbon和Eureka配合使用的时候，会自动讲虚拟主机名称映射成微服务的网络地址
 
+
+
+
+
+Spring Cloud之一 Eureka简介及原理　http://itmuch.com/spring-cloud-1/
+
