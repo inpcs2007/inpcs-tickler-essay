@@ -15,6 +15,7 @@ java -jar microservice-discovery-eureka-ha-0.0.1-SNAPSHOT.jar  --spring.profiles
 > ### _**重要文献**_
 
 * 跨域访问支持（Spring Boot、Nginx、浏览器）[http://itmuch.com/work/cors/](http://itmuch.com/work/cors/)
+* @FeignClient 解释https://blog.csdn.net/a15514920226/article/details/78924483
 
 # SpringCloud进阶教程
 
