@@ -16,9 +16,9 @@ java -jar microservice-discovery-eureka-ha-0.0.1-SNAPSHOT.jar  --spring.profiles
 
 1. Spring Cloud之一 Eureka简介及原理　[http://itmuch.com/spring-cloud-1/](http://itmuch.com/spring-cloud-1/)
 
-2. Spring Cloud之二 创建一个Eureka Server http://itmuch.com/spring-cloud-2/
+2. Spring Cloud之二 创建一个Eureka Server [http://itmuch.com/spring-cloud-2/](http://itmuch.com/spring-cloud-2/)
+
+3. Spring Cloud之二 创建一个Eureka Server集群　[http://www.cnblogs.com/ityouknow/p/6854805.html](http://www.cnblogs.com/ityouknow/p/6854805.html)
 
 
-
-3. http://www.cnblogs.com/ityouknow/p/6854805.html
 
