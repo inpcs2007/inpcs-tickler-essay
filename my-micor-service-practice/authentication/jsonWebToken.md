@@ -1,6 +1,8 @@
 # 常用的认证机制
 
-参见[https://www.cnblogs.com/xiekeli/p/5607107.html](https://www.cnblogs.com/xiekeli/p/5607107.html)
+参见　[https://www.cnblogs.com/xiekeli/p/5607107.html](https://www.cnblogs.com/xiekeli/p/5607107.html)
+
+参见　https://www.cnblogs.com/zjutzz/p/5790180.html
 
 ### HTTP Basic Auth {#http-basic-auth}
 
@@ -220,7 +222,7 @@ return builder.compact();
 import javax.xml.bind.DatatypeConverter;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.Claims;
- 
+
 //Sample method to validate and read the JWT
 private void parseJWT(String jwt) {
 //This line will throw an exception if it is not a signed JWS (as expected)
@@ -320,10 +322,10 @@ class ApiController < ActionController::Base
 
     # Step 2: 检查该用户是否存在于数据库
     @current_user = User.find(payload['user_id'])
-    
+
     # Step 3: 检查Token签名是否正确.
     JWT.decode(request.authorization, current_user.api_secret)
-    
+
     # Step 4: 检查 "iat" 和"exp" 以确保这个Token是在2秒内创建的.
     now = Time.now.to_i
     if payload['iat'] > now || payload['exp'] < now
@@ -360,19 +362,19 @@ def set_current_user_from_jwt_token
   if payload['iat'] > now || payload['exp'] < now
     # 返回401
   end
-  
+
   # 下面将检查确保这个JWT之前没有被使用过
   # 使用Redis的原子操作
-  
+
   # The redis 的键: <user id>:<one-time use token>
   key = "#{payload['user_id']}:#{payload['jti']}"
-  
+
   # 看键值是否在redis中已经存在. 如果不存在则返回nil. 如果存在则返回“1”. .
   if redis.getset(key, "1")
     # 返回401
     # 
   end
-  
+
   # 进行键值过期检查
   redis.expireat(key, payload['exp'] + 2)
 end
