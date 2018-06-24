@@ -18,6 +18,7 @@ systemctl show --property=FragmentPath docker
 vim  /lib/systemd/system/docker.service 
 ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:5678
 ```
+
 ![](/my-docker-practice/build-base-env/static/remotApi测试.png)
 
 #### _重新加载配置文件，重启docker daemon_
@@ -55,10 +56,12 @@ Server:
 ![](/my-docker-practice/build-base-env/static/remotApi.png)
 
 #### _页面测试_
-inpcs@inpcshome:~$ curl http://localhost:5678/version
+
+inpcs@inpcshome:~$ curl [http://localhost:5678/version](http://localhost:5678/version)
 
 ```
 {"Platform":{"Name":""},"Components":[{"Name":"Engine","Version":"18.03.0-ce","Details":{"ApiVersion":"1.37","Arch":"amd64","BuildTime":"2018-03-21T23:10:17.000000000+00:00","Experimental":"false","GitCommit":"0520e24","GoVersion":"go1.9.4","KernelVersion":"4.14.0-deepin2-amd64","MinAPIVersion":"1.12","Os":"linux"}}],"Version":"18.03.0-ce","ApiVersion":"1.37","MinAPIVersion":"1.12","GitCommit":"0520e24","GoVersion":"go1.9.4","Os":"linux","Arch":"amd64","KernelVersion":"4.14.0-deepin2-amd64","BuildTime":"2018-03-21T23:10:17.000000000+00:00"}
-
 ```
+
+
 
