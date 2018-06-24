@@ -29,6 +29,7 @@
     * [构建容器之Nginx环境](my-docker-practice/build-base-soft/build-nginx-soft.md)
     * [构建容器之RabbitMQ环境](my-docker-practice/build-base-soft/build-rabbitmq-soft.md)
     * [构建容器之Artifactory环境](my-docker-practice/build-base-soft/build-Artifactory-soft.md)
+  * 构建DevOps环境
 * [我的实践之架构师之路](7.my-practice-architect-roadmap.md)
   * [构建基础环境](my-practice-architect-roadmap/build-base-env/build-base-env.md)
     * [构建基础环境之java基础环境](my-practice-architect-roadmap/build-base-env/build-java-env.md)
