@@ -31,6 +31,7 @@
     * [构建容器之Artifactory环境](my-docker-practice/build-base-soft/build-Artifactory-soft.md)
   * [构建DevOps环境](my-docker-practice/build-base-env/gou-jian-devops-huan-jing.md)
     * [构建SonarQube环境](my-docker-practice/build-base-env/gou-jian-devops-huan-jing/gou-jian-sonarqube-huan-jing.md)
+    * [构建haubor环境](my-docker-practice/build-base-env/gou-jian-devops-huan-jing/gou-jian-haubor-huan-jing.md)
 * [我的实践之架构师之路](7.my-practice-architect-roadmap.md)
   * [构建基础环境](my-practice-architect-roadmap/build-base-env/build-base-env.md)
     * [构建基础环境之java基础环境](my-practice-architect-roadmap/build-base-env/build-java-env.md)

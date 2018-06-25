@@ -28,7 +28,11 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 > 1. 添加apt源
 
 ```
-sudo add-apt-repository "deb [arch=amd64] [https://download.docker.com/linux/ubuntu](https://download.docker.com/linux/ubuntu) $(lsb_release -cs) stable"
+
+sudo add-apt-repository \
+        "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+        $(lsb_release -cs) \
+        stable"
 ```
 
 #### _安装docker-ce_
@@ -51,6 +55,15 @@ sudo apt-get upgrade docker-engine
 ```
 sudo gpasswd -a username docker  
 sudo service docker restart
+```
+
+## 安装Docker Compose {#step-2-—-installing-docker-compose}
+
+```
+sudo apt-get -y install python-pip
+
+sudo pip install docker-compose　-y
+
 ```
 
 
