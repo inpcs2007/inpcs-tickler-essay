@@ -11,7 +11,13 @@ tar -xzvf harbor-online-installer-v1.4.0.tgz
 解压缩之后，目录下回生成harbor.conf文件，该文件就是Harbor的配置文件。
 
 ```
-配置hostname=<公网ＩＰ地址>
+配置hostname=<公网ＩＰ地址>47.95.2.44
+```
+
+运行Harbor
+
+```
+浏览器登陆Harbor[http://47.95.2.44]（默认用户密码：admin/Harbor12345）
 ```
 
 
