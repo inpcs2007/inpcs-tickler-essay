@@ -149,19 +149,11 @@ harbor提供了镜像仓库复制功能，也就是“主－备”。主要是�
 
 ![](/my-docker-practice/build-base-env/static/harbor-sync-1.png)
 
-2.
+2.填写【名称】、【描述】、【源项目（需要同步的项目）】、【源镜像过滤器】、【目标（备份库的信息：地址、账号、密码、项目名）】、【触发模式】（默认手动）
 
+![](/my-docker-practice/build-base-env/static/harbor-2.png)
 
-
-3.
-
-4.
-
-5.
-
-6.
-
-## 八、harbor的主备镜像仓库
+## 八、harbor的https的配置
 
 
 
