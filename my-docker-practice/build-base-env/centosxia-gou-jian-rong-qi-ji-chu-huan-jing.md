@@ -1,4 +1,4 @@
-# 在Centos构建docker的基础环境
+# 在Centos6.9构建docker的基础环境
 
 在Ubuntu\(6.9\)为基础系统环境构建docker-ce的基础环境，根据具体步骤构建出本文。
 
@@ -267,7 +267,6 @@ EOF
 
 # 重启docker
 service docker restart
-
 ```
 
 容器的批零操作命令
