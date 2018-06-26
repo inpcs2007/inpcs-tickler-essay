@@ -73,3 +73,15 @@ https://dev.aliyun.com/search.html
 
 进入docker的目录/etc/docker/
 
+```
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://nactxuae.mirror.aliyuncs.com"]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+
+
