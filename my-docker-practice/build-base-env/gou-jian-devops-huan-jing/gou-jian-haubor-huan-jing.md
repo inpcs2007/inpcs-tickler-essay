@@ -111,10 +111,29 @@ root@xxxx:/dockerWork# docker images
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
 47.94.149.205/core/busybox   latest              8c811b4aec35        4 weeks ago         1.15MB
 busybox                      latest              8c811b4aec35        4 weeks ago         1.15MB
+```
+
+#### 3.登录仓库
+
+```
+root@iZ2ze22o1dtiiawzopg0vnZ:/dockerWork# docker login -u inpcs -p xxxxxxxxxx 47.94.149.205
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Login Succeeded
+```
+
+#### 4.push镜像
+
+```
+root@xxxx:/dockerWork# docker push 47.94.149.205/inpcs-library/busybox:v2
+The push refers to repository [47.94.149.205/inpcs-library/busybox]
+432b65032b94: Layer already exists 
+v2: digest: sha256:74f634b1bc1bd74535d5209589734efbd44a25f4e2dc96d78784576a3eb5b335 size: 527
 
 ```
 
-#### 3.为新项目添加成员
+* 说明：docker push 47.94.149.205/inpcs-library/busybox:v2
+  * inpcs-library是在harbor的项目名称
+  * 如果需要端口请在47.94.149.205后面添加【:端口】，本文是默认的【80】，所以省略
 
 
 
