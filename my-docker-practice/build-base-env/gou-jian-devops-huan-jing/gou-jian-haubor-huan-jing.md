@@ -2,6 +2,8 @@
 
 ### 参考：[https://www.jianshu.com/p/95191c4eed92](https://www.jianshu.com/p/95191c4eed92)
 
+### https://www.jianshu.com/p/79eebbcc5da0
+
 ## 一、基础环境介绍
 
 ```
@@ -16,7 +18,6 @@
 ```
 ＃在线安装包1.4.0版本
 wget https://storage.googleapis.com/harbor-releases/release-1.4.0/harbor-online-installer-v1.4.0.tgz
-
 ```
 
 #### 2.解压缩Harbor文件
@@ -47,10 +48,9 @@ cd 进入harbor目录,会看见harbor.conf文件，该文件就是Harbor的配�
 
 #### 2.运行Harbor
 
-在浏览器的地址栏中输入　http://47.94.149.205　（你配置好的主机名称）
+在浏览器的地址栏中输入　[http://47.94.149.205](http://47.94.149.205)　（你配置好的主机名称）
 
 ```
-
 ＃默认用户：admin
 ＃密码：Harbor12345
 ```
@@ -67,7 +67,6 @@ root@xxxx:/etc/docker# cat daemon.json
   "registry-mirrors": ["https://nactxuae.mirror.aliyuncs.com"],
   "insecure-registries": ["47.94.149.205"]
 }
-
 ```
 
 #### 2.重启docker
@@ -76,7 +75,17 @@ root@xxxx:/etc/docker# cat daemon.json
 systemctl restart docker.service
 ```
 
-3.终端登录harbor私有仓库
+#### 3.终端登录harbor私有仓库
+
+```
+root@xxxx:/etc/docker# docker login 47.94.149.205
+Username: admin
+Password: 
+Login Succeeded
+
+```
+
+## 五、harbor仓库web配置
 
 
 
