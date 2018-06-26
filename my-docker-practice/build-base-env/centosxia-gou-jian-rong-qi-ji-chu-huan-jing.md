@@ -153,11 +153,102 @@ pip install distribute
 ```
 
 * 注意：升级 Python 可能会导致 yum 命令不可用。解决方法如下：
+
   * 编辑 /usr/bin/yum 文件，将开头第一行的
 
-    * ```
-      #!/usr/bin/python
-      ```
+```
+#!/usr/bin/python
+改为
+#!/usr/bin/python2.6
+```
+
+## 安装docker-compose
+
+```
+　# 制定安装1.5.2对应docker 1.7.1
+ pip install docker-compose==1.5.2
+```
+
+> V2 版本的 docker-compose.yml
+
+```
+version: "2"
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6389:6379"
+    volumes:
+      - "./data/redis/data:/data"
+  mysql:
+    build: ./builds/mysql
+    ports:
+      - "3386:3306"
+    volumes:
+      - "./data/mysql/data:/var/lib/mysql"
+      - "./data/mysql/conf:/etc/mysql/conf.d"
+    restart: always   
+    environment:
+      MYSQL_DATABASE: solar
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Huofigo2015
+      MYSQL_ROOT_PASSWORD: Huofigo2015
+  api:
+    depends_on:
+      - mysql
+      - redis
+    build:
+      context: ./builds/api
+    ports:
+      - "8388:8080"
+    volumes:
+      - "./target/solar-app-0.0.1-SNAPSHOT.jar:/app/solar-app.jar"
+    entrypoint:
+      - "java"
+      - "-jar"
+      - "/app/solar-app.jar"
+    restart: always
+```
+
+> V1 版本的 docker-compose.yml
+
+```
+redis:
+  image: "redis:alpine"
+  ports:
+    - "6389:6379"
+  volumes:
+    - "./data/redis/data:/data"
+mysql:
+  build: ./builds/mysql
+  ports:
+    - "3386:3306"
+  volumes:
+    - "./data/mysql/data:/var/lib/mysql"
+    - "./data/mysql/conf:/etc/mysql/conf.d"
+  restart: always
+  environment:
+    MYSQL_DATABASE: solar
+    MYSQL_USER: root
+    MYSQL_PASSWORD: Huofigo2015
+    MYSQL_ROOT_PASSWORD: Huofigo2015
+api:
+  build: ./builds/api
+  ports:
+    - "8388:8080"
+  volumes:
+    - "./target/solar-app-0.0.1-SNAPSHOT.jar:/app/solar-app.jar"
+  links:
+    - mysql
+    - redis
+  entrypoint:
+    - "java"
+    - "-jar"
+    - "/app/solar-app.jar"
+  restart: always
+```
+
+
 
 ### 阿里云docker加速
 
