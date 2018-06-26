@@ -68,23 +68,23 @@ yum groupinstall -y "Development tools"
 # 下载python2.7.15
 wget https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tar.xz
 
+#　安装必须包
+yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel
+
 # 进入Python源代码目录
 cd Python-2.7.15
 # 配置检查项，生成makefile
 ./configure --prefix=/usr/local
 
-#　安装必须包
-yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel
+# 编译
+make && make install
+```
+
+> 配置Python2.7.15环境
+
 
 
 ```
-
-
-
-```
-
-
-
 sudo apt-get -y install python-pip
 
 sudo pip -y install docker-compose
