@@ -128,12 +128,16 @@ root@xxxx:/dockerWork# docker push 47.94.149.205/inpcs-library/busybox:v2
 The push refers to repository [47.94.149.205/inpcs-library/busybox]
 432b65032b94: Layer already exists 
 v2: digest: sha256:74f634b1bc1bd74535d5209589734efbd44a25f4e2dc96d78784576a3eb5b335 size: 527
-
 ```
 
 * 说明：docker push 47.94.149.205/inpcs-library/busybox:v2
   * inpcs-library是在harbor的项目名称
   * 如果需要端口请在47.94.149.205后面添加【:端口】，本文是默认的【80】，所以省略
+  * harbor中的管理员可以创建项目，开发人员可以push镜像，游客只能pull镜像。
+
+## 七、harbor的主备镜像仓库
+
+## 八、harbor的主备镜像仓库
 
 
 
