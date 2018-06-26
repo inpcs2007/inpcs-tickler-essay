@@ -134,7 +134,30 @@ lrwxrwxrwx  1 root root   28 6月  26 19:49 /usr/bin/python-config -> /usr/local
 Python 2.7.15
 ```
 
+> 为新版 Python 安装 setuptools
 
+```
+wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+```
+
+> 为新版 Python 安装 pip
+
+```
+easy_install pip
+```
+
+> 为新版 Python 安装 distribute 包（可选）
+
+```
+pip install distribute
+```
+
+* 注意：升级 Python 可能会导致 yum 命令不可用。解决方法如下：
+  * 编辑 /usr/bin/yum 文件，将开头第一行的
+
+    * ```
+      #!/usr/bin/python
+      ```
 
 ### 阿里云docker加速
 
