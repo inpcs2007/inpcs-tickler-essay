@@ -145,11 +145,13 @@ harbor提供了镜像仓库复制功能，也就是“主－备”。主要是�
 
 先决条件是安装好两个harbor镜像仓库
 
-1.
+1.选择需要复制的【项目】\(saas-dev\)，然后新建规则。本例中已经有规则了。
 
-
+![](/my-docker-practice/build-base-env/static/harbor-sync-1.png)
 
 2.
+
+
 
 3.
 
