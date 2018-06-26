@@ -1,6 +1,4 @@
-### 参考：https://www.jianshu.com/p/95191c4eed92
-
-
+### 参考：[https://www.jianshu.com/p/95191c4eed92](https://www.jianshu.com/p/95191c4eed92)
 
 ### 下载Harbor安装文件
 
@@ -40,6 +38,14 @@ sudo service docker restart
 $ sudo service docker restart
 
 ExecStart=/usr/bin/dockerd --insecure-registry=47.95.2.44
+
+
+
+
+OPTIONS='--selinux-enabled=false --log-driver=journald --insecure-registry=192.168.3.42:8060'
+
+ADD_REGISTRY='--add-registry 47.95.2.44'
+INSECURE_REGISTRY='--insecure-registry=47.95.2.44'
 ```
 
 
