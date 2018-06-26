@@ -83,7 +83,7 @@ Password:
 Login Succeeded
 ```
 
-## 五、harbor仓库web配置
+## 五、harbor私有仓库web配置
 
 #### 1.创建用户
 
@@ -91,7 +91,7 @@ Login Succeeded
 
 #### 3.为新项目添加成员
 
-## 六、push镜像到镜像仓库
+## 六、push镜像到私有仓库
 
 #### 1.镜像打标签
 
@@ -99,19 +99,19 @@ Login Succeeded
 # 基本语法
 docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 # 样例
-docker tag busybox 47.94.149.205/core/busybox
+docker tag busybox 47.94.149.205/library/busybox
 ```
 
 #### 2.查看镜像
 
 ```
 root@xxxx:/dockerWork# docker images
-REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-47.94.149.205/core/busybox   latest              8c811b4aec35        4 weeks ago         1.15MB
-busybox                      latest              8c811b4aec35        4 weeks ago         1.15MB
+REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
+47.94.149.205/library/busybox   latest              8c811b4aec35        4 weeks ago         1.15MB
+busybox                         latest              8c811b4aec35        4 weeks ago         1.15MB
 ```
 
-#### 3.登录仓库
+#### 3.登录私有仓库
 
 ```
 root@iZ2ze22o1dtiiawzopg0vnZ:/dockerWork# docker login -u inpcs -p xxxxxxxxxx 47.94.149.205
@@ -122,18 +122,40 @@ Login Succeeded
 #### 4.push镜像
 
 ```
-root@xxxx:/dockerWork# docker push 47.94.149.205/inpcs-library/busybox:v2
-The push refers to repository [47.94.149.205/inpcs-library/busybox]
+root@xxxx:/dockerWork# docker push 47.94.149.205/library/busybox:v2
+The push refers to repository [47.94.149.205/library/busybox]
 432b65032b94: Layer already exists 
 v2: digest: sha256:74f634b1bc1bd74535d5209589734efbd44a25f4e2dc96d78784576a3eb5b335 size: 527
 ```
 
-* 说明：docker push 47.94.149.205/inpcs-library/busybox:v2
+* 说明：docker push 47.94.149.205/library/busybox:v2
   * inpcs-library是在harbor的项目名称
   * 如果需要端口请在47.94.149.205后面添加【:端口】，本文是默认的【80】，所以省略
   * harbor中的管理员可以创建项目，开发人员可以push镜像，游客只能pull镜像。
 
 ## 七、harbor的主备镜像仓库
+
+harbor提供了镜像仓库复制功能，也就是“主－备”。主要是构建两个harbor私有库，具体配置如下：
+
+```
+主镜像仓库：47.95.2.44
+备镜像仓库：47.94.149.205
+镜像复制路径为：47.95.2.44　－－－> 47.94.149.205
+```
+
+先决条件是安装好两个harbor镜像仓库
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
 
 
 
