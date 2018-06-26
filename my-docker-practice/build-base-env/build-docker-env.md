@@ -83,5 +83,19 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
+容器的批零操作命令
+
+```
+＃stop停止所有容器
+docker stop $(docker ps -a -q) 
+# remove删除所有容器
+docker  rm $(docker ps -a -q)
+# 删除所有id为<None>的image
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+# remove删除全部image
+docker rmi $(docker images -q)
+
+```
+
 
 

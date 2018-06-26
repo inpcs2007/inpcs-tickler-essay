@@ -2,7 +2,7 @@
 
 ### 参考：[https://www.jianshu.com/p/95191c4eed92](https://www.jianshu.com/p/95191c4eed92)
 
-### https://www.jianshu.com/p/79eebbcc5da0
+### [https://www.jianshu.com/p/79eebbcc5da0](https://www.jianshu.com/p/79eebbcc5da0)
 
 ## 一、基础环境介绍
 
@@ -63,6 +63,7 @@ cd 进入harbor目录,会看见harbor.conf文件，该文件就是Harbor的配�
 
 ```
 root@xxxx:/etc/docker# cat daemon.json 
+＃
 {
   "registry-mirrors": ["https://nactxuae.mirror.aliyuncs.com"],
   "insecure-registries": ["47.94.149.205"]
@@ -82,12 +83,9 @@ root@xxxx:/etc/docker# docker login 47.94.149.205
 Username: admin
 Password: 
 Login Succeeded
-
 ```
 
 ## 五、harbor仓库web配置
-
-
 
 配置docker私有库
 
