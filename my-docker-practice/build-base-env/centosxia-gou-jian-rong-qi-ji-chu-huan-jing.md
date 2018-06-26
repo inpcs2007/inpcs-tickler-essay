@@ -80,14 +80,28 @@ cd Python-2.7.15
 make && make install
 ```
 
-> 配置Python2.7.15环境
-
-
+> 查看Python2.7.15安装结果
 
 ```
-sudo apt-get -y install python-pip
+[root@xxxx Python-2.7.15]# ll -tr /usr/local/bin/python*
+-rwxr-xr-x 1 root root 6283209 6月  26 19:32 /usr/local/bin/python2.7
+-rwxr-xr-x 1 root root    1687 6月  26 19:32 /usr/local/bin/python2.7-config
+lrwxrwxrwx 1 root root       7 6月  26 19:32 /usr/local/bin/python -> python2
+lrwxrwxrwx 1 root root       9 6月  26 19:32 /usr/local/bin/python2 -> python2.7
+lrwxrwxrwx 1 root root      16 6月  26 19:32 /usr/local/bin/python2-config -> python2.7-config
+lrwxrwxrwx 1 root root      14 6月  26 19:32 /usr/local/bin/python-config -> python2-config
+```
 
-sudo pip -y install docker-compose
+> 查看系统自带的Python2.6
+
+```
+[root@xxxx Python-2.7.15]# ll -tr /usr/bin/python*
+-rwxr-xr-x  1 root root 1418 8月  18 2016 /usr/bin/python2.6-config
+-rwxr-xr-x. 2 root root 4864 8月  18 2016 /usr/bin/python2.6
+-rwxr-xr-x. 2 root root 4864 8月  18 2016 /usr/bin/python
+lrwxrwxrwx. 1 root root    6 3月  27 04:52 /usr/bin/python2 -> python
+lrwxrwxrwx  1 root root   16 3月  27 04:56 /usr/bin/python-config -> python2.6-config
+
 ```
 
 ### 阿里云docker加速
