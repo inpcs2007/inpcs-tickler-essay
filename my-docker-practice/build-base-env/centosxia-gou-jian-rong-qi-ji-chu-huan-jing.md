@@ -105,9 +105,28 @@ lrwxrwxrwx  1 root root   16 3月  27 04:56 /usr/bin/python-config -> python2.6-
 
 > 更新系统默认 Python 版本
 
+```
+# 先把系统默认的旧版 Python 重命名
+mv /usr/bin/python /usr/bin/python.old
+# 再删除系统默认的 python-config 软链接
+rm -f /usr/bin/python-config
+# 最后创建新版本的 Python 软链接
+ln -s /usr/local/bin/python /usr/bin/python
+ln -s /usr/local/bin/python-config /usr/bin/python-config
+```
 
+> 最后查看
 
+```
+[root@xxxx Python-2.7.15]# ll -tr /usr/bin/python*
+-rwxr-xr-x  1 root root 1418 8月  18 2016 /usr/bin/python2.6-config
+-rwxr-xr-x. 2 root root 4864 8月  18 2016 /usr/bin/python.old
+-rwxr-xr-x. 2 root root 4864 8月  18 2016 /usr/bin/python2.6
+lrwxrwxrwx. 1 root root    6 3月  27 04:52 /usr/bin/python2 -> python
+lrwxrwxrwx  1 root root   21 6月  26 19:48 /usr/bin/python -> /usr/local/bin/python
+lrwxrwxrwx  1 root root   28 6月  26 19:49 /usr/bin/python-config -> /usr/local/bin/python-config
 
+```
 
 ### 阿里云docker加速
 
