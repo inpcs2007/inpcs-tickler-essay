@@ -1,8 +1,8 @@
 # 在Ubuntu构建docker的基础环境
 
-在Ubuntu14.04为基础系统环境构建docker-ce的基础环境，根据具体步骤构建出本文。
+在Ubuntu\(14.04,16.04\)为基础系统环境构建docker-ce的基础环境，根据具体步骤构建出本文。
 
-### _Ubuntu14.04下构建docker-ce环境_
+### _Ubuntu下构建docker-ce环境_
 
 #### 移除原有的docker
 
