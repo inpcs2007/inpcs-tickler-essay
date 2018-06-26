@@ -130,11 +130,11 @@ lrwxrwxrwx  1 root root   28 6月  26 19:49 /usr/bin/python-config -> /usr/local
 > 查看python版本
 
 ```
-[root@iZ2zeeim1f116mn7h272vhZ Python-2.7.15]# python --version
+[root@xxxx Python-2.7.15]# python --version
 Python 2.7.15
-[root@iZ2zeeim1f116mn7h272vhZ Python-2.7.15]# python --version
-Python 2.7.1
 ```
+
+
 
 ### 阿里云docker加速
 
