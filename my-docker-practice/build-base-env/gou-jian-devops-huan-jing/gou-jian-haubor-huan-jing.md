@@ -101,16 +101,20 @@ Login Succeeded
 # 基本语法
 docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 # 样例
+docker tag busybox 47.94.149.205/core/busybox
+```
+
+#### 2.查看镜像
+
+```
+root@xxxx:/dockerWork# docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+47.94.149.205/core/busybox   latest              8c811b4aec35        4 weeks ago         1.15MB
+busybox                      latest              8c811b4aec35        4 weeks ago         1.15MB
 
 ```
 
-#### 2.创建项目
-
 #### 3.为新项目添加成员
-
-
-
-
 
 
 
