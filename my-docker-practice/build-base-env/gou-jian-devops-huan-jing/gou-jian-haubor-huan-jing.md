@@ -1,8 +1,6 @@
 # 使用Ubuntu16.04\(64位\)构建Harbor私有docker仓库
 
-### 参考：[https://www.jianshu.com/p/95191c4eed92](https://www.jianshu.com/p/2ebadd9a323d)
-
-### 
+#### 参考：[https://www.jianshu.com/p/95191c4eed92](https://www.jianshu.com/p/2ebadd9a323d)
 
 ## 一、基础环境介绍
 
@@ -136,6 +134,8 @@ v2: digest: sha256:74f634b1bc1bd74535d5209589734efbd44a25f4e2dc96d78784576a3eb5b
   * harbor中的管理员可以创建项目，开发人员可以push镜像，游客只能pull镜像。
 
 ## 七、harbor的主备镜像仓库
+
+
 
 ## 八、harbor的主备镜像仓库
 
