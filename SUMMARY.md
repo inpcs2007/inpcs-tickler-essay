@@ -21,6 +21,7 @@
     * [构建Remot Api环境](my-docker-practice/build-base-env/remot-api-setup.md)
     * [Ubuntu下构建容器基础环境](my-docker-practice/build-base-env/ubuntu16xia-gou-jian-rong-qi-ji-chu-huan-jing.md)
     * [Centos6.9下构建容器基础环境](my-docker-practice/build-base-env/centosxia-gou-jian-rong-qi-ji-chu-huan-jing.md)
+    * [Centos7.4下构建容器基础环境](my-docker-practice/build-base-env/centos74xia-gou-jian-rong-qi-ji-chu-huan-jing.md)
   * [构建容器常用软件环境](my-docker-practice/build-base-soft/build-base-soft.md)
     * [构建容器之ES环境](my-docker-practice/build-base-soft/build-es-soft.md)
     * [构建容器之MySQL环境](my-docker-practice/build-base-soft/build-mysql-soft.md)
