@@ -87,31 +87,30 @@ Login Succeeded
 
 ## 五、harbor仓库web配置
 
-配置docker私有库
+#### 1.创建用户
+
+#### 2.创建项目
+
+#### 3.为新项目添加成员
+
+## 六、push镜像到镜像仓库
+
+#### 1.镜像打标签
 
 ```
-可能会出现无法push镜像到私有仓库的问题。这是因为我们启动的registry服务不是安全可信赖的。
-这是我们需要修改docker的配置文件/etc/default/docker，添加下面的内容，
+# 基本语法
+docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+# 样例
 
-修改Docker配置文件
-vim /etc/default/docker
-增加以下一行
-DOCKER_OPTS="$DOCKER_OPTS --insecure-registry=47.95.2.44:5000"
-重启Docker
-sudo service docker restart
-
-$ sudo service docker restart
-
-ExecStart=/usr/bin/dockerd --insecure-registry=47.95.2.44
-
-
-
-
-OPTIONS='--selinux-enabled=false --log-driver=journald --insecure-registry=192.168.3.42:8060'
-
-ADD_REGISTRY='--add-registry 47.95.2.44'
-INSECURE_REGISTRY='--insecure-registry=47.95.2.44'
 ```
+
+#### 2.创建项目
+
+#### 3.为新项目添加成员
+
+
+
+
 
 
 
