@@ -248,8 +248,6 @@ api:
   restart: always
 ```
 
-
-
 ### 阿里云docker加速
 
 ```
@@ -259,13 +257,17 @@ https://dev.aliyun.com/search.html
 进入docker的目录/etc/docker/
 
 ```
+# 配置阿里云docker加速
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://nactxuae.mirror.aliyuncs.com"]
+"registry-mirrors": ["https://nactxuae.mirror.aliyuncs.com"],
+"insecure-registries": ["47.95.2.44"]
 }
 EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker
+
+# 重启docker
+service docker restart
+
 ```
 
 容器的批零操作命令
