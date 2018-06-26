@@ -103,7 +103,9 @@ sudo tee /etc/docker/daemon.json <<-'EOF'
 EOF
 
 # 重启docker
-service docker restart
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
 ```
 
 容器的批零操作命令
