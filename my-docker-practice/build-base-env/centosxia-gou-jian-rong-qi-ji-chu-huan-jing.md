@@ -57,7 +57,7 @@ sudo gpasswd -a username docker
 sudo service docker restart
 ```
 
-## 安装Docker Compose {#step-2-—-installing-docker-compose}
+## 安装Python2.7.15 {#step-2-—-installing-docker-compose}
 
 > 安装前准备工作
 
@@ -101,8 +101,13 @@ lrwxrwxrwx 1 root root      14 6月  26 19:32 /usr/local/bin/python-config -> py
 -rwxr-xr-x. 2 root root 4864 8月  18 2016 /usr/bin/python
 lrwxrwxrwx. 1 root root    6 3月  27 04:52 /usr/bin/python2 -> python
 lrwxrwxrwx  1 root root   16 3月  27 04:56 /usr/bin/python-config -> python2.6-config
-
 ```
+
+> 更新系统默认 Python 版本
+
+
+
+
 
 ### 阿里云docker加速
 
