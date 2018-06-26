@@ -62,8 +62,14 @@ sudo service docker restart
 ```
 sudo apt-get -y install python-pip
 
-sudo pip install docker-compose　-y
+sudo pip -y install docker-compose
 ```
 
+### 阿里云docker加速
 
+```
+https://dev.aliyun.com/search.html
+```
+
+进入docker的目录/etc/docker/
 
