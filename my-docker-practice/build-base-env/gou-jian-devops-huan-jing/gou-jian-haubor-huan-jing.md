@@ -1,8 +1,8 @@
 # 使用Ubuntu16.04\(64位\)构建Harbor私有docker仓库
 
-### 参考：[https://www.jianshu.com/p/95191c4eed92](https://www.jianshu.com/p/95191c4eed92)
+### 参考：[https://www.jianshu.com/p/95191c4eed92](https://www.jianshu.com/p/2ebadd9a323d)
 
-### [https://www.jianshu.com/p/79eebbcc5da0](https://www.jianshu.com/p/79eebbcc5da0)
+### 
 
 ## 一、基础环境介绍
 

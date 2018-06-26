@@ -94,7 +94,6 @@ docker  rm $(docker ps -a -q)
 docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
 # remove删除全部image
 docker rmi $(docker images -q)
-
 ```
 
 
