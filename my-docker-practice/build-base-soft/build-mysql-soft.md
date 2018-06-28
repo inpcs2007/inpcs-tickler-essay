@@ -33,21 +33,16 @@
 # http://dev.mysql.com/doc/mysql/en/server-system-variables.html
 
 [mysqld]
-pid-file	= /var/run/mysqld/mysqld.pid
-socket		= /var/run/mysqld/mysqld.sock
-datadir		= /var/lib/mysql
-log-error	= /var/log/mysql/error.log
+pid-file    = /var/run/mysqld/mysqld.pid
+socket        = /var/run/mysqld/mysqld.sock
+datadir        = /var/lib/mysql
+log-error    = /var/log/mysql/error.log
 symbolic-links=0
-
 ```
 
 #### 运行命令
 
-
-
-
-
-docker run -p 8536:3306 --name mymysql -v $PWD/conf/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf -v $PWD/logs:/var/log/mysql -v $PWD/data:/var/lib/mysql -e MYSQL\_ROOT\_PASSWORD=zkfread19761129 -d mysql:5.6
+docker run -p 8536:3306 --name mymysql -v $PWD/conf/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf -v $PWD/logs:/var/log/mysql -v $PWD/data:/var/lib/mysql -e MYSQL\_ROOT\_PASSWORD=ZKfread19761129 -d mysql:5.6
 
 命令说明：
 
@@ -61,9 +56,5 @@ docker run -p 8536:3306 --name mymysql -v $PWD/conf/my.cnf:/etc/mysql/mysql.conf
 
 * **-e MYSQL\_ROOT\_PASSWORD=123456：**初始化 root 用户的密码
 
-
-
 -v /soft/mysql/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
-
-
 
