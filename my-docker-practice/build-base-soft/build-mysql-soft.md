@@ -1,4 +1,4 @@
-docker run -p 3306:3306 --name mymysql -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL\_ROOT\_PASSWORD=123456 -d mysql:5.7
+docker run -p 8536:3306 --name mymysql -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL\_ROOT\_PASSWORD=zkfread19761129 -d mysql:5.6
 
 命令说明：
 
