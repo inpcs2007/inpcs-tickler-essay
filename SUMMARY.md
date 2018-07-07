@@ -35,6 +35,7 @@
   * [构建DevOps环境](my-docker-practice/build-base-env/gou-jian-devops-huan-jing.md)
     * [构建SonarQube环境](my-docker-practice/build-base-env/gou-jian-devops-huan-jing/gou-jian-sonarqube-huan-jing.md)
     * [构建haubor环境](my-docker-practice/build-base-env/gou-jian-devops-huan-jing/gou-jian-haubor-huan-jing.md)
+    * [构建容器之jenkins环境](my-docker-practice/build-base-env/gou-jian-devops-huan-jing/gou-jianrong-qi-zhi-jenkins-huan-jing.md)
   * [构建Kubernetes集群环境](my-docker-practice/build-base-env/gou-jiankubernetes-ji-qun-huan-jing.md)
     * [基于Centos7的Kubernetes的集群环境](my-docker-practice/build-base-env/gou-jiankubernetes-ji-qun-huan-jing/ji-yu-centos7-de-kubernetes-de-ji-qun-huan-jing.md)
     * [基于Ubuntu16的Kubernetes的集群环境](my-docker-practice/build-base-env/gou-jiankubernetes-ji-qun-huan-jing/ji-yuubuntu16-de-kubernetes-de-ji-qun-huan-jing.md)
