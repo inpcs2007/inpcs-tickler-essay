@@ -101,12 +101,37 @@ private static Logger logger = LogManager.getLogger(Test.class.getName());
     </loggers>
 
 </configuration>
-
 ```
 
 ### Sprintboot集成
 
+**pom.xml加入log4j2，并同时把spring boot默认的logging去掉**
 
+```
+<dependencies>  
+    <dependency>  
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-starter-web</artifactId>  
+        <exclusions><!-- 去掉默认配置 -->  
+            <exclusion>  
+                <groupId>org.springframework.boot</groupId>  
+                <artifactId>spring-boot-starter-logging</artifactId>  
+            </exclusion>  
+        </exclusions>  
+    </dependency>  
+    <dependency> <!-- 引入log4j2依赖 -->  
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-starter-log4j2</artifactId>  
+    </dependency>  
+</dependencies>  
+
+```
+
+##### 注意事项：
+
+　　根据maven依赖的特点，应该将该项配置放到第一位。
+
+### 
 
 ### 参考资料：
 
