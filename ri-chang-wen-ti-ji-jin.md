@@ -28,7 +28,7 @@ usr 占用不高，sys 占用超高，同时csw\(context switch\) 达到1200w，
 > at org.apache.logging.log4j.core.async.AsyncLoggerConfigHelper.callAppendersFromAnotherThread\(AsyncLoggerConfigHelper.java:342\)  
 > at org.apache.logging.log4j.core.async.AsyncLoggerConfig.callAppenders\(AsyncLoggerConfig.java:114\)  
 > ......
-
+>
 > grep "LockSupport.java:349" 43911.log \| wc -l  
 > 11536
 
@@ -37,44 +37,14 @@ unsafe.park\(false, 1\);
 1 nano = 10^-9s, 推测大量线程频繁的短时间sleep造成了大量的线程切换，做个实验：
 
 ```
-public
-static
-void
-contextSwitchTest
-(
-int
- threadCount)
-throws
- Exception 
-{
+public static void contextSwitchTest(int threadCount) throws Exception {
   ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
-  
-for
- (
-int
- i = 
-0
-; i 
-<
- threadCount; i++) {
-    executorService.execute(
-new
- Runnable() {
-      
-@Override
-public
-void
-run
-()
-{
-        
-while
- (
-true
-) {
-          LockSupport.parkNanos(
-1
-);
+  for (int i = 0; i < threadCount; i++) {
+    executorService.execute(new Runnable() {
+      @Override
+      public void run() {
+        while (true) {
+          LockSupport.parkNanos(1);
         }
       }
     });
@@ -88,46 +58,14 @@ true
 原因找到了，接下来看看出问题是log生产速度怎么样：通过不断地`ls -al error.log/business.log`，发现Log的生成速度才几MB/s,远没有达到磁盘的极限200M/s，再做个测试：
 
 ```
-private
-static
-void
-loggerSpeedTest
-(
-int
- threadCount)
-throws
- Exception 
-{
+private static void loggerSpeedTest(int threadCount) throws Exception {
   ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
-  
-for
- (
-int
- i = 
-0
-; i 
-<
- threadCount; i++) {
-    executorService.execute(
-new
- Runnable() {
-      
-@Override
-public
-void
-run
-()
-{
-        
-while
- (
-true
-) {
-          LOGGER.error(
-"test log4j2 logging speed"
-, 
-new
- UnsupportedOperationException());
+  for (int i = 0; i < threadCount; i++) {
+    executorService.execute(new Runnable() {
+      @Override
+      public void run() {
+        while (true) {
+          LOGGER.error("test log4j2 logging speed", new UnsupportedOperationException());
         }
       }
     });
@@ -141,34 +79,15 @@ new
 AsyncLoggerConfig.callAppenders\(\)
 
 ```
-@
-Override
+@Override
+protected void callAppenders(final LogEvent event) {
+    // populate lazily initialized fields
+    event.getSource();
+    event.getThreadName();
 
-protected
-void
-callAppenders
-(
-final LogEvent 
-event
-) 
-{
-    
-// populate lazily initialized fields
-event
-.getSource();
-    
-event
-.getThreadName();
-
-    
-// pass on the event to a separate thread
-if
- (!helper.callAppendersFromAnotherThread(
-event
-)) {
-        super.callAppenders(
-event
-);
+    // pass on the event to a separate thread
+    if (!helper.callAppendersFromAnotherThread(event)) {
+        super.callAppenders(event);
     }
 }
 ```
@@ -176,94 +95,38 @@ event
 AsyncLoggerConfigHelper.callAppendersFromAnotherThread\(\)
 
 ```
-public
- boolean 
-callAppendersFromAnotherThread
-(
-final LogEvent 
-event
-) 
-{
-    
-// TODO refactor to reduce size to 
-<
-= 35 bytecodes to allow JVM to inline it
-
-    final Disruptor
-<
-Log4jEventWrapper
->
- temp = disruptor;
-    
-if
- (temp == 
-null
-) { 
-// LOG4J2-639
-
-        LOGGER.fatal(
-"Ignoring log event after log4j was shut down"
-);
-        
-return
-true
-;
+public boolean callAppendersFromAnotherThread(final LogEvent event) {
+    // TODO refactor to reduce size to <= 35 bytecodes to allow JVM to inline it
+    final Disruptor<Log4jEventWrapper> temp = disruptor;
+    if (temp == null) { // LOG4J2-639
+        LOGGER.fatal("Ignoring log event after log4j was shut down");
+        return true;
     }
 
-    
-// LOG4J2-471: prevent deadlock when RingBuffer is full and object
-// being logged calls Logger.log() from its toString() method
-if
- (isAppenderThread.
-get
-() == Boolean.TRUE 
-//
-&
-&
- temp.getRingBuffer().remainingCapacity() == 
-0
-) {
+    // LOG4J2-471: prevent deadlock when RingBuffer is full and object
+    // being logged calls Logger.log() from its toString() method
+    if (isAppenderThread.get() == Boolean.TRUE //
+            && temp.getRingBuffer().remainingCapacity() == 0) {
 
-        
-// bypass RingBuffer and invoke Appender directly
-return
-false
-;
+        // bypass RingBuffer and invoke Appender directly
+        return false;
     }
-    
-// LOG4J2-639: catch NPE if disruptor field was set to null after our check above
-try
- {
-        LogEvent logEvent = 
-event
-;
-        
-if
- (
-event
- instanceof RingBufferLogEvent) {
-            logEvent = ((RingBufferLogEvent) 
-event
-).createMemento();
+    // LOG4J2-639: catch NPE if disruptor field was set to null after our check above
+    try {
+        LogEvent logEvent = event;
+        if (event instanceof RingBufferLogEvent) {
+            logEvent = ((RingBufferLogEvent) event).createMemento();
         }
-        logEvent.getMessage().getFormattedMessage(); 
-// LOG4J2-763: ask message to freeze parameters
-// Note: do NOT use the temp variable above!
-// That could result in adding a log event to the disruptor after it was shut down,
-// which could cause the publishEvent method to hang and never return.
+        logEvent.getMessage().getFormattedMessage(); // LOG4J2-763: ask message to freeze parameters
 
+        // Note: do NOT use the temp variable above!
+        // That could result in adding a log event to the disruptor after it was shut down,
+        // which could cause the publishEvent method to hang and never return.
         disruptor.getRingBuffer().publishEvent(translator, logEvent, asyncLoggerConfig);
-    } 
-catch
- (final NullPointerException npe) {
-        LOGGER.fatal(
-"Ignoring log event after log4j was shut down."
-);
+    } catch (final NullPointerException npe) {
+        LOGGER.fatal("Ignoring log event after log4j was shut down.");
     }
-    
-return
-true
-;
+    return true;
 }
 ```
 
@@ -271,22 +134,8 @@ RingBuffer.publishEvent\(\)
 
 ```
 @Override
-public
-<
-A, B
->
-void
-publishEvent
-(EventTranslatorTwoArg
-<
-E, A, B
->
- translator, A arg0, B arg1)
-{
-    
-final
-long
- sequence = sequencer.next();
+public <A, B> void publishEvent(EventTranslatorTwoArg<E, A, B> translator, A arg0, B arg1){
+    final long sequence = sequencer.next();
     translateAndPublish(translator, sequence, arg0, arg1);
 }
 ```
@@ -294,104 +143,37 @@ long
 MultiProducerSequencer.next\(\)
 
 ```
-@
-Override
-
-public
-long
-next
-(
-int
- n
-)
-{
-    
-if
- (n 
-<
-1
-){
-        
-throw
-new
- IllegalArgumentException(
-"n must be 
->
- 0"
-);
+@Override
+public long next(int n){
+    if (n < 1){
+        throw new IllegalArgumentException("n must be > 0");
     }
 
-    
-long
- current;
-    
-long
- next;
+    long current;
+    long next;
 
-    
-do
-{
-        current = cursor.
-get
-();
+    do{
+        current = cursor.get();
         next = current + n;
 
-        
-long
- wrapPoint = next - bufferSize;
-        
-long
- cachedGatingSequence = gatingSequenceCache.
-get
-();
+        long wrapPoint = next - bufferSize;
+        long cachedGatingSequence = gatingSequenceCache.get();
 
-        
-if
- (wrapPoint 
->
- cachedGatingSequence || cachedGatingSequence 
->
- current){
-            
-long
- gatingSequence = Util.getMinimumSequence(gatingSequences, current);
+        if (wrapPoint > cachedGatingSequence || cachedGatingSequence > current){
+            long gatingSequence = Util.getMinimumSequence(gatingSequences, current);
 
-            
-if
- (wrapPoint 
->
- gatingSequence){
-                LockSupport.parkNanos(
-1
-); 
-// TODO, should we spin based on the wait strategy?
-continue
-;
+            if (wrapPoint > gatingSequence){
+                LockSupport.parkNanos(1); // TODO, should we spin based on the wait strategy?
+                continue;
             }
 
-            gatingSequenceCache.
-set
-(gatingSequence);
+            gatingSequenceCache.set(gatingSequence);
+        }else if (cursor.compareAndSet(current, next)){
+            break;
         }
-else
-if
- (
-cursor.compareAndSet(current, next
-))
-{
-            
-break
-;
-        }
-    }
-while
- (
-true
-);
+    }while (true);
 
-    
-return
- next;
+    return next;
 }
 ```
 
@@ -406,39 +188,12 @@ if this fails because the queue is full, then fall back to asking AsyncEventRout
 AsyncLoggerConfig.callAppenders\(\)
 
 ```
-@
-Override
-
-protected
-void
-callAppenders
-(
-final LogEvent 
-event
-) 
-{
-    populateLazilyInitializedFields(
-event
-);
-    
-if
- (!
-delegate
-.tryEnqueue(
-event
-, 
-this
-)) {
-        final EventRoute eventRoute = 
-delegate
-.getEventRoute(
-event
-.getLevel());
-        eventRoute.logMessage(
-this
-, 
-event
-);
+@Override
+protected void callAppenders(final LogEvent event) {
+    populateLazilyInitializedFields(event);
+    if (!delegate.tryEnqueue(event, this)) {
+        final EventRoute eventRoute = delegate.getEventRoute(event.getLevel());
+        eventRoute.logMessage(this, event);
     }
 }
 ```
@@ -447,30 +202,12 @@ AsyncLoggerConfigDisruptor.getEventRoute\(\)
 
 ```
 @Override
-public
- EventRoute 
-getEventRoute
-(
-final
- Level logLevel)
-{
-    
-final
-int
- remainingCapacity = remainingDisruptorCapacity();
-    
-if
- (remainingCapacity 
-<
-0
-) {
-        
-return
- EventRoute.DISCARD;
+public EventRoute getEventRoute(final Level logLevel) {
+    final int remainingCapacity = remainingDisruptorCapacity();
+    if (remainingCapacity < 0) {
+        return EventRoute.DISCARD;
     }
-    
-return
- asyncQueueFullPolicy.getRoute(backgroundThreadId, logLevel);
+    return asyncQueueFullPolicy.getRoute(backgroundThreadId, logLevel);
 }
 ```
 
@@ -478,24 +215,13 @@ DefaultAsyncQueueFullPolicy.getRoute\(\)
 
 ```
 @Override
-public
- EventRoute 
-getRoute
-(
-final
-long
- backgroundThreadId, 
-final
- Level level)
-{
+public EventRoute getRoute(final long backgroundThreadId, final Level level) {
 
-    
-// LOG4J2-1518: prevent deadlock when RingBuffer is full and object being logged calls
-// Logger.log in application thread
-// See also LOG4J2-471: prevent deadlock when RingBuffer is full and object
-// being logged calls Logger.log() from its toString() method in background thread
-return
- EventRoute.SYNCHRONOUS;
+    // LOG4J2-1518: prevent deadlock when RingBuffer is full and object being logged calls
+    // Logger.log in application thread
+    // See also LOG4J2-471: prevent deadlock when RingBuffer is full and object
+    // being logged calls Logger.log() from its toString() method in background thread
+    return EventRoute.SYNCHRONOUS;
 }
 ```
 
