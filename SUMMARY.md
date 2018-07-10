@@ -54,4 +54,6 @@
   * [lantern的安装](my-important-documents/lanternde-an-zhuang.md)
 * [重要资料](9.my-important-infodata.md)
 * [参考资料](10.my-References-introduce.md)
+* [日常问题集锦](ri-chang-wen-ti-ji-jin.md)
+  * 故障排查流程
 
