@@ -42,12 +42,6 @@ service docker restart
 docker version
 ```
 
-#### _升级docker-ce_
-
-```
-sudo apt-get upgrade docker-engine
-```
-
 ### 易用性配置
 
 > 使用docker时取消sudo命令

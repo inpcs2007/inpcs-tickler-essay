@@ -52,6 +52,8 @@
 * [重要文献](8.my-important-documents.md)
   * [谷歌的大规模分布式跟踪系统](my-important-documents/dapper-translation.md)
   * [lantern的安装](my-important-documents/lanternde-an-zhuang.md)
+  * [数据治理产品](my-important-documents/shu-ju-zhi-li-chan-pin.md)
+    * [微服务日志中心](my-important-documents/shu-ju-zhi-li-chan-pin/wei-fu-wu-ri-zhi-zhong-xin.md)
 * [重要资料](9.my-important-infodata.md)
 * [参考资料](10.my-References-introduce.md)
 * [日常问题集锦](ri-chang-wen-ti-ji-jin.md)
