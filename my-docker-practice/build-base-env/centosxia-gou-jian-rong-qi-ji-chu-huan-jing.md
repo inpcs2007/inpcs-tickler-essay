@@ -359,7 +359,6 @@ Dependency Installed:
   lxc.x86_64 0:1.0.11-1.el6                       lxc-libs.x86_64 0:1.0.11-1.el6                 
 
 Complete!
-
 ```
 
 执行Development Tools工具包的顺序
@@ -782,19 +781,161 @@ Dependency Updated:
   rpm-python.x86_64 0:4.8.0-59.el6              systemtap-runtime.x86_64 0:2.9-9.el6             
 
 Complete!
+[root@localhost ~]#
+```
+
+安装必须包
+
+```
+[root@localhost ~]# yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel
+Loaded plugins: fastestmirror, refresh-packagekit, security
+Setting up Install Process
+Loading mirror speeds from cached hostfile
+ * base: ftp.sjtu.edu.cn
+ * epel: mirrors.aliyun.com
+ * extras: mirrors.163.com
+ * updates: ftp.sjtu.edu.cn
+Resolving Dependencies
+--> Running transaction check
+---> Package bzip2-devel.x86_64 0:1.0.5-7.el6_0 will be installed
+---> Package ncurses-devel.x86_64 0:5.7-4.20090207.el6 will be installed
+---> Package openssl-devel.x86_64 0:1.0.1e-57.el6 will be installed
+--> Processing Dependency: krb5-devel for package: openssl-devel-1.0.1e-57.el6.x86_64
+---> Package zlib-devel.x86_64 0:1.2.3-29.el6 will be installed
+--> Running transaction check
+---> Package krb5-devel.x86_64 0:1.10.3-65.el6 will be installed
+--> Processing Dependency: libkadm5(x86-64) = 1.10.3-65.el6 for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Processing Dependency: libselinux-devel for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Processing Dependency: libcom_err-devel for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Processing Dependency: keyutils-libs-devel for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Running transaction check
+---> Package keyutils-libs-devel.x86_64 0:1.4-5.el6 will be installed
+---> Package libcom_err-devel.x86_64 0:1.41.12-24.el6 will be installed
+--> Processing Dependency: libcom_err = 1.41.12-24.el6 for package: libcom_err-devel-1.41.12-24.el6.x86_64
+---> Package libkadm5.x86_64 0:1.10.3-65.el6 will be installed
+---> Package libselinux-devel.x86_64 0:2.0.94-7.el6 will be installed
+--> Processing Dependency: libsepol-devel >= 2.0.32-1 for package: libselinux-devel-2.0.94-7.el6.x86_64
+--> Processing Dependency: pkgconfig(libsepol) for package: libselinux-devel-2.0.94-7.el6.x86_64
+--> Running transaction check
+---> Package libcom_err.x86_64 0:1.41.12-23.el6 will be updated
+--> Processing Dependency: libcom_err = 1.41.12-23.el6 for package: libss-1.41.12-23.el6.x86_64
+--> Processing Dependency: libcom_err = 1.41.12-23.el6 for package: e2fsprogs-libs-1.41.12-23.el6.x86_64
+--> Processing Dependency: libcom_err = 1.41.12-23.el6 for package: e2fsprogs-1.41.12-23.el6.x86_64
+---> Package libcom_err.x86_64 0:1.41.12-24.el6 will be an update
+---> Package libsepol-devel.x86_64 0:2.0.41-4.el6 will be installed
+--> Running transaction check
+---> Package e2fsprogs.x86_64 0:1.41.12-23.el6 will be updated
+---> Package e2fsprogs.x86_64 0:1.41.12-24.el6 will be an update
+---> Package e2fsprogs-libs.x86_64 0:1.41.12-23.el6 will be updated
+---> Package e2fsprogs-libs.x86_64 0:1.41.12-24.el6 will be an update
+---> Package libss.x86_64 0:1.41.12-23.el6 will be updated
+---> Package libss.x86_64 0:1.41.12-24.el6 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=================================================================================================
+ Package                      Arch            Version                        Repository     Size
+=================================================================================================
+Installing:
+ bzip2-devel                  x86_64          1.0.5-7.el6_0                  base          250 k
+ ncurses-devel                x86_64          5.7-4.20090207.el6             base          641 k
+ openssl-devel                x86_64          1.0.1e-57.el6                  base          1.2 M
+ zlib-devel                   x86_64          1.2.3-29.el6                   base           44 k
+Installing for dependencies:
+ keyutils-libs-devel          x86_64          1.4-5.el6                      base           29 k
+ krb5-devel                   x86_64          1.10.3-65.el6                  base          504 k
+ libcom_err-devel             x86_64          1.41.12-24.el6                 base           33 k
+ libkadm5                     x86_64          1.10.3-65.el6                  base          143 k
+ libselinux-devel             x86_64          2.0.94-7.el6                   base          137 k
+ libsepol-devel               x86_64          2.0.41-4.el6                   base           64 k
+Updating for dependencies:
+ e2fsprogs                    x86_64          1.41.12-24.el6                 base          554 k
+ e2fsprogs-libs               x86_64          1.41.12-24.el6                 base          121 k
+ libcom_err                   x86_64          1.41.12-24.el6                 base           38 k
+ libss                        x86_64          1.41.12-24.el6                 base           42 k
+
+Transaction Summary
+=================================================================================================
+Install      10 Package(s)
+Upgrade       4 Package(s)
+
+Total download size: 3.7 M
+Downloading Packages:
+(1/14): bzip2-devel-1.0.5-7.el6_0.x86_64.rpm                              | 250 kB     00:00     
+(2/14): e2fsprogs-1.41.12-24.el6.x86_64.rpm                               | 554 kB     00:00     
+(3/14): e2fsprogs-libs-1.41.12-24.el6.x86_64.rpm                          | 121 kB     00:00     
+(4/14): keyutils-libs-devel-1.4-5.el6.x86_64.rpm                          |  29 kB     00:00     
+(5/14): krb5-devel-1.10.3-65.el6.x86_64.rpm                               | 504 kB     00:00     
+(6/14): libcom_err-1.41.12-24.el6.x86_64.rpm                              |  38 kB     00:00     
+(7/14): libcom_err-devel-1.41.12-24.el6.x86_64.rpm                        |  33 kB     00:00     
+(8/14): libkadm5-1.10.3-65.el6.x86_64.rpm                                 | 143 kB     00:00     
+(9/14): libselinux-devel-2.0.94-7.el6.x86_64.rpm                          | 137 kB     00:00     
+(10/14): libsepol-devel-2.0.41-4.el6.x86_64.rpm                           |  64 kB     00:00     
+(11/14): libss-1.41.12-24.el6.x86_64.rpm                                  |  42 kB     00:00     
+(12/14): ncurses-devel-5.7-4.20090207.el6.x86_64.rpm                      | 641 kB     00:00     
+(13/14): openssl-devel-1.0.1e-57.el6.x86_64.rpm                           | 1.2 MB     00:00     
+(14/14): zlib-devel-1.2.3-29.el6.x86_64.rpm                               |  44 kB     00:00     
+-------------------------------------------------------------------------------------------------
+Total                                                            1.2 MB/s | 3.7 MB     00:03     
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Updating   : libcom_err-1.41.12-24.el6.x86_64                                             1/18 
+  Installing : libcom_err-devel-1.41.12-24.el6.x86_64                                       2/18 
+  Installing : libkadm5-1.10.3-65.el6.x86_64                                                3/18 
+  Updating   : libss-1.41.12-24.el6.x86_64                                                  4/18 
+  Updating   : e2fsprogs-libs-1.41.12-24.el6.x86_64                                         5/18 
+  Installing : zlib-devel-1.2.3-29.el6.x86_64                                               6/18 
+  Installing : libsepol-devel-2.0.41-4.el6.x86_64                                           7/18 
+  Installing : libselinux-devel-2.0.94-7.el6.x86_64                                         8/18 
+  Installing : keyutils-libs-devel-1.4-5.el6.x86_64                                         9/18 
+  Installing : krb5-devel-1.10.3-65.el6.x86_64                                             10/18 
+  Installing : openssl-devel-1.0.1e-57.el6.x86_64                                          11/18 
+  Updating   : e2fsprogs-1.41.12-24.el6.x86_64                                             12/18 
+  Installing : bzip2-devel-1.0.5-7.el6_0.x86_64                                            13/18 
+  Installing : ncurses-devel-5.7-4.20090207.el6.x86_64                                     14/18 
+  Cleanup    : e2fsprogs-1.41.12-23.el6.x86_64                                             15/18 
+  Cleanup    : e2fsprogs-libs-1.41.12-23.el6.x86_64                                        16/18 
+  Cleanup    : libss-1.41.12-23.el6.x86_64                                                 17/18 
+  Cleanup    : libcom_err-1.41.12-23.el6.x86_64                                            18/18 
+  Verifying  : libcom_err-devel-1.41.12-24.el6.x86_64                                       1/18 
+  Verifying  : ncurses-devel-5.7-4.20090207.el6.x86_64                                      2/18 
+  Verifying  : keyutils-libs-devel-1.4-5.el6.x86_64                                         3/18 
+  Verifying  : libsepol-devel-2.0.41-4.el6.x86_64                                           4/18 
+  Verifying  : openssl-devel-1.0.1e-57.el6.x86_64                                           5/18 
+  Verifying  : libcom_err-1.41.12-24.el6.x86_64                                             6/18 
+  Verifying  : krb5-devel-1.10.3-65.el6.x86_64                                              7/18 
+  Verifying  : libkadm5-1.10.3-65.el6.x86_64                                                8/18 
+  Verifying  : libss-1.41.12-24.el6.x86_64                                                  9/18 
+  Verifying  : libselinux-devel-2.0.94-7.el6.x86_64                                        10/18 
+  Verifying  : zlib-devel-1.2.3-29.el6.x86_64                                              11/18 
+  Verifying  : e2fsprogs-libs-1.41.12-24.el6.x86_64                                        12/18 
+  Verifying  : bzip2-devel-1.0.5-7.el6_0.x86_64                                            13/18 
+  Verifying  : e2fsprogs-1.41.12-24.el6.x86_64                                             14/18 
+  Verifying  : libss-1.41.12-23.el6.x86_64                                                 15/18 
+  Verifying  : e2fsprogs-1.41.12-23.el6.x86_64                                             16/18 
+  Verifying  : e2fsprogs-libs-1.41.12-23.el6.x86_64                                        17/18 
+  Verifying  : libcom_err-1.41.12-23.el6.x86_64                                            18/18 
+
+Installed:
+  bzip2-devel.x86_64 0:1.0.5-7.el6_0           ncurses-devel.x86_64 0:5.7-4.20090207.el6        
+  openssl-devel.x86_64 0:1.0.1e-57.el6         zlib-devel.x86_64 0:1.2.3-29.el6                 
+
+Dependency Installed:
+  keyutils-libs-devel.x86_64 0:1.4-5.el6            krb5-devel.x86_64 0:1.10.3-65.el6            
+  libcom_err-devel.x86_64 0:1.41.12-24.el6          libkadm5.x86_64 0:1.10.3-65.el6              
+  libselinux-devel.x86_64 0:2.0.94-7.el6            libsepol-devel.x86_64 0:2.0.41-4.el6         
+
+Dependency Updated:
+  e2fsprogs.x86_64 0:1.41.12-24.el6             e2fsprogs-libs.x86_64 0:1.41.12-24.el6           
+  libcom_err.x86_64 0:1.41.12-24.el6            libss.x86_64 0:1.41.12-24.el6                    
+
+Complete!
 [root@localhost ~]# 
 
 ```
-
-
-
-
-
-
-
-
-
-
 
 
 
