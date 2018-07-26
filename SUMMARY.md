@@ -4,6 +4,7 @@
 * [我的实践之大数据实践](1.my-hadoop-practice.md)
   * [构建大数据平台环境](my-hadoop-practice/build-hadoop-env.md)
   * [实时数据清洗](my-hadoop-practice/shi-shi-shu-ju-qing-xi.md)
+  * [苏宁基于Spark Streaming的实时日志分析系统实践](my-hadoop-practice/su-ning-ji-yu-spark-streaming-de-shi-shi-ri-zhi-fen-xi-xi-tong-shi-jian.md)
 * [我的实践之互联网架构实践](2.my-internet-practice.md)
   * [互联网架构涵盖哪些领域](my-internet-practice/what-internet-architecture.md)
 * [我的实践之路前端全栈架构实践](3.my-fount-architecture.md)
