@@ -55,6 +55,10 @@
   * [jira学习笔记](my-practice-architect-roadmap/build-jira-soft/jira-info.md)
     * [构建基础环境之jira环境](my-practice-architect-roadmap/build-jira-soft/build-jira-env.md)
   * [怎样介绍系统架构](my-practice-architect-roadmap/introduce-system-architecture.md)
+* [我的实践之DevOps](wo-de-shi-jian-zhi-devops.md)
+  * Dev的实践
+  * [Ops的实践](wo-de-shi-jian-zhi-devops/opsde-shi-jian.md)
+    * [大规模集群下使用P2P技术软件（Murder）分发大文件](wo-de-shi-jian-zhi-devops/opsde-shi-jian/da-gui-mo-ji-qun-xia-shi-yong-p2p-ji-zhu-ruan-jian-ff08-murder-ff09-fen-fa-da-wen-jian.md)
 * [重要文献](8.my-important-documents.md)
   * [谷歌的大规模分布式跟踪系统](my-important-documents/dapper-translation.md)
   * [lantern的安装](my-important-documents/lanternde-an-zhuang.md)
@@ -62,6 +66,5 @@
     * [微服务日志中心](my-important-documents/shu-ju-zhi-li-chan-pin/wei-fu-wu-ri-zhi-zhong-xin.md)
 * [重要资料](9.my-important-infodata.md)
 * [参考资料](10.my-References-introduce.md)
-* [日常问题集锦](ri-chang-wen-ti-ji-jin.md)
-  * [故障排查流程](ri-chang-wen-ti-ji-jin/gu-zhang-pai-cha-liu-cheng.md)
+* [我的实践之DevOps](wo-de-shi-jian-zhi-devops.md)
 
