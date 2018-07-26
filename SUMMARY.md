@@ -8,6 +8,7 @@
     * [数据仓库之数据模型](my-hadoop-practice/shu-ju-cang-ku/shu-ju-cang-ku-zhi-shu-ju-mo-xing.md)
   * [数据清洗](my-hadoop-practice/shu-ju-qing-xi.md)
     * [实时数据清洗](my-hadoop-practice/shu-ju-qing-xi/shi-shi-shu-ju-qing-xi.md)
+    * [苏宁基于Spark Streaming的实时日志分析系统实践](my-hadoop-practice/shu-ju-qing-xi/su-ning-ji-yu-spark-streaming-de-shi-shi-ri-zhi-fen-xi-xi-tong-shi-jian.md)
 * [我的实践之互联网架构实践](2.my-internet-practice.md)
   * [互联网架构涵盖哪些领域](my-internet-practice/what-internet-architecture.md)
 * [我的实践之路前端全栈架构实践](3.my-fount-architecture.md)
