@@ -1,8 +1,6 @@
-
-
 # 苏宁基于Spark Streaming的实时日志分析系统实践
 
-http://www.infoq.com/cn/articles/suning-realtime-log-analysis-system-spark-streaming
+[http://www.infoq.com/cn/articles/suning-realtime-log-analysis-system-spark-streaming](http://www.infoq.com/cn/articles/suning-realtime-log-analysis-system-spark-streaming)
 
 # 前言
 
@@ -18,8 +16,6 @@ http://www.infoq.com/cn/articles/suning-realtime-log-analysis-system-spark-strea
 * 业务需求多样: 支撑营销、采购、财务、供应链商户等数据需求
 
 [![](https://res.infoq.com/articles/suning-realtime-log-analysis-system-spark-streaming/zh/resources/4301-1520874703884.png)](https://s3.amazonaws.com/infoq.content.live.0/articles/suning-realtime-log-analysis-system-spark-streaming/zh/resources/4301-1520874703884.png)
-
-**更多干货内容请关注微信公众号“AI 前线”，（ID：ai-front）**
 
 ### 流程与架构
 
@@ -74,7 +70,7 @@ Normalized Discounted Cumulative Gain，即 NDCG，常用作搜索排序的评�
 
 # 性能与数据安全保障
 
-## 性能保障 
+## 性能保障
 
 ### 容量预估与扩展
 
@@ -97,7 +93,7 @@ Normalized Discounted Cumulative Gain，即 NDCG，常用作搜索排序的评�
 
 经过方案预研以及性能测试，Druid 大大提升了 NDCG 这类指标的计算分析效率，让指标分析任务变得更轻量级，指标多维分析能力交给 Druid 来解决。
 
-## 数据保障 
+## 数据保障
 
 ### 保障数据不丢失
 
@@ -118,7 +114,7 @@ Spark Streaming 提供了 check point\(WAL 日志\) 备份机制，任务失败�
 
 对于销售类数据，不仅要保证数据被处理，还需要保证数据仅被处理一次，涉及销售财务指标数据必须 100% 准确。
 
-**第一种方案：Labmda 架构 +  Redis 去重**
+**第一种方案：Labmda 架构 +  Redis 去重**
 
 * 实时去重：一个订单被计算后，将订单号写入 Redis，通过比对订单号，保证数据不重复处理。
 * 离线更新：每天凌晨重新计算销售指标，更新前一天指标数据
