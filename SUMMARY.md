@@ -3,7 +3,6 @@
 * [前言](README.md)
 * [我的实践之大数据实践](1.my-hadoop-practice.md)
   * [构建大数据平台环境](my-hadoop-practice/build-hadoop-env.md)
-  * [苏宁基于Spark Streaming的实时日志分析系统实践](my-hadoop-practice/su-ning-ji-yu-spark-streaming-de-shi-shi-ri-zhi-fen-xi-xi-tong-shi-jian.md)
   * [数据仓库](my-hadoop-practice/shu-ju-cang-ku.md)
     * [数据仓库之数据模型](my-hadoop-practice/shu-ju-cang-ku/shu-ju-cang-ku-zhi-shu-ju-mo-xing.md)
   * [数据清洗](my-hadoop-practice/shu-ju-qing-xi.md)
