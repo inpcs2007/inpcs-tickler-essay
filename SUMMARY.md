@@ -11,6 +11,9 @@
     * [实时流计算、实时去重](my-hadoop-practice/shu-ju-qing-xi/shi-shi-liu-ji-suan-3001-shi-shi-qu-zhong.md)
   * [日志收集](my-hadoop-practice/ri-zhi-shou-ji.md)
     * [日志实时收集之FileBeat+Kafka](my-hadoop-practice/ri-zhi-shou-ji/ri-zhi-shi-shi-shou-ji-zhi-filebeat-+-kafka.md)
+  * 流式计算
+    * [Spark On Yarn](my-hadoop-practice/spark-on-yarn.md)
+      * [Spark On Yarn：提交Spark应用程序到Yarn](my-hadoop-practice/spark-on-yarn/spark-on-yarnff1a-ti-jiao-spark-ying-yong-cheng-xu-dao-yarn.md)
 * [我的实践之互联网架构实践](2.my-internet-practice.md)
   * [互联网架构涵盖哪些领域](my-internet-practice/what-internet-architecture.md)
 * [我的实践之路前端全栈架构实践](3.my-fount-architecture.md)
