@@ -15,6 +15,7 @@
   * 流式计算
     * [Spark On Yarn](my-hadoop-practice/spark-on-yarn.md)
       * [Spark On Yarn：提交Spark应用程序到Yarn](my-hadoop-practice/spark-on-yarn/spark-on-yarnff1a-ti-jiao-spark-ying-yong-cheng-xu-dao-yarn.md)
+      * [在Yarn上运行spark-shell和spark-sql命令行](my-hadoop-practice/spark-on-yarn/zai-yarn-shang-yun-xing-spark-shell-he-spark-sql-ming-ling-xing.md)
 * [我的实践之互联网架构实践](2.my-internet-practice.md)
   * [互联网架构涵盖哪些领域](my-internet-practice/what-internet-architecture.md)
 * [我的实践之路前端全栈架构实践](3.my-fount-architecture.md)
