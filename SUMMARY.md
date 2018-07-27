@@ -9,6 +9,7 @@
     * [实时数据清洗](my-hadoop-practice/shu-ju-qing-xi/shi-shi-shu-ju-qing-xi.md)
     * [苏宁基于Spark Streaming的实时日志分析系统实践](my-hadoop-practice/shu-ju-qing-xi/su-ning-ji-yu-spark-streaming-de-shi-shi-ri-zhi-fen-xi-xi-tong-shi-jian.md)
     * [实时流计算、实时去重](my-hadoop-practice/shu-ju-qing-xi/shi-shi-liu-ji-suan-3001-shi-shi-qu-zhong.md)
+    * [Redis的数据清理](my-hadoop-practice/shu-ju-qing-xi/redisde-shu-ju-qing-li.md)
   * [日志收集](my-hadoop-practice/ri-zhi-shou-ji.md)
     * [日志实时收集之FileBeat+Kafka](my-hadoop-practice/ri-zhi-shou-ji/ri-zhi-shi-shi-shou-ji-zhi-filebeat-+-kafka.md)
   * 流式计算
