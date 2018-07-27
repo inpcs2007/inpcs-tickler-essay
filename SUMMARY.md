@@ -19,6 +19,7 @@
       * [SparkSQL On Yarn with Hive](my-hadoop-practice/spark-on-yarn/sparksql-on-yarn-with-hive.md)
   * [数据ETL](my-hadoop-practice/shu-ju-etl.md)
     * [取数](my-hadoop-practice/shu-ju-etl/qu-shu.md)
+    * 开源ETL工具Kettle初试–远程执行任务
   * [数据获取](my-hadoop-practice/shu-ju-qing-xi/shu-ju-huo-qu.md)
 * [我的实践之互联网架构实践](2.my-internet-practice.md)
   * [互联网架构涵盖哪些领域](my-internet-practice/what-internet-architecture.md)
