@@ -42,9 +42,27 @@ P-Value：在原假设成立是，出现观测值以及更极端情况的概率�
 
 B.备择假设
 
-原假设：没喝酒                                备择假设：喝了酒
+原假设：没喝酒                                备择假设：喝了酒（不知道的）
 
 正常人究竟浓度检测结果分布          酒后驾驶司机究竟浓度检测结果分布
+
+C. Threshold分类阈值
+
+Threshold酒驾检测标准：分类的阈值，阈值可人为改变
+
+D.设立分类阈值的结果
+
+原假设成立有两个结果：
+
+True Negative：
+
+False Negative：
+
+备择假设成立有两个结果：
+
+True Positive：
+
+False Positive：
 
 #### 2）confusion matrix（混淆矩阵）
 
